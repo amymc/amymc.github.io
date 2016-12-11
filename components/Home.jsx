@@ -17,7 +17,9 @@ class Home extends React.Component {
 
     return (
       <div className='home'>
-       TEST
+        { projects.map((project, index) => {
+          return <Folder key={index} project={project}/>
+        })}
         <StartBar />
         <Trash />
       </div>

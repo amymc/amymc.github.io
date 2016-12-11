@@ -1,15 +1,21 @@
-var React = require('react');
+import React from 'react';
+import { connect } from 'react-redux';
+import '../styles/folder.css';
 
-var Folder = React.createClass({
+class Folder extends React.Component {
 
-  render: function() {
+  render() {
+    var { project } = this.props;
 
     return (
-      <div>
-      Folder TEST
+      <div className='folder'>
+        <div className='folder__icon' />
+        <span className='folder__title'>
+          {project. title}
+        </span>
       </div>
     );
   }
-});
+}
 
-module.exports = Folder
+export default Folder;
