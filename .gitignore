@@ -4,5 +4,7 @@ node_modules
 # Source maps
 *.js.map
 
-# Files marked with gitigx
-*gitigx*
+# misc
+.DS_Store
+.env
+npm-debug.log
