@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import StartBar from './startbar';
 import Trash from './trash';
@@ -24,4 +25,14 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    projects: state.projects
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Home);
+

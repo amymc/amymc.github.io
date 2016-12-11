@@ -3,6 +3,9 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import 'current-input';
 
+import { Provider } from 'react-redux';
+import store, { history } from './store';
+
 import App from './components/App';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
@@ -26,9 +29,11 @@ const routes = (
 
 
 render(
-  <Router
-    history={browserHistory}
-    routes={routes}
-  />,
+  <Provider store={store}>
+    <Router
+      history={browserHistory}
+      routes={routes}
+    />
+  </Provider>,
   document.getElementById('root')
 );

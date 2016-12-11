@@ -1,6 +1,9 @@
 # Dependency directory
 node_modules
 
+# Build directory
+build
+
 # Source maps
 *.js.map
 
