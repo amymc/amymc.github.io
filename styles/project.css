@@ -1,0 +1,33 @@
+.project {
+  position: absolute;
+  left: 10%;
+  background-color: #C0C7C8;
+  padding: 2px;
+  width: 80%;
+}
+
+/* use postcss nesting ?? */
+@media (min-width: 540px) {
+  .project {
+    width: 450px;
+  }
+}
+
+.project__image {
+  display: inline-block;
+  width: 30%;
+  background-color: olive;
+}
+
+.project__info-wrapper {
+  display: inline-block;
+  width: 70%;
+}
+
+.project__title {
+  display: block;
+  background-color: #000086;
+  color: white;
+  padding: 0 2px;
+  letter-spacing: 0.5px;
+}

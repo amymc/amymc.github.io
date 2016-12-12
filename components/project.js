@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import '../styles/project.css';
+import '../styles/project.css';
 
 class Project extends React.Component {
 
@@ -9,7 +9,18 @@ class Project extends React.Component {
 
     return (
       <div className='project'>
-       {project.id}
+        <h1 className='project__title'>
+          {project.title}
+        </h1>
+        <div className='project__image-wrapper'>
+          { project.image_urls.map((url, index) => {
+            return <img key={index} className='project__image' alt='' src={url} />
+          })}
+        </div>
+        <div className='project__info-wrapper'>
+          {project.description}
+          <a href={project.company_url} target='_blank'>Link</a>
+        </div>
       </div>
     );
   }

@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   postcss: function () {
-    return [require('autoprefixer'), require('postcss-autoreset')];
+    return [require('postcss-autoreset'), require('postcss-nesting'), require('postcss-nested')];
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
