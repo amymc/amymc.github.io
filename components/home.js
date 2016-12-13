@@ -23,6 +23,7 @@ class Home extends React.Component {
     this.handleFolderClick = this.handleFolderClick.bind(this);
     this.handleRunClick = this.handleRunClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
+    this.closePopup = this.closePopup.bind(this);
   }
 
   handleFolderClick(id) {
@@ -44,6 +45,12 @@ class Home extends React.Component {
     console.log('clicked!', Menu);
     this.setState({
       showMenu: true
+    });
+  }
+
+  closePopup() {
+    this.setState({
+      showPopup: false
     });
   }
 
@@ -78,7 +85,7 @@ class Home extends React.Component {
           null
         }
         {this.state.showPopup ?
-          <Popup /> :
+          <Popup onClick={this.closePopup}/> :
           null
         }
         <StartBar onClick={this.handleStartClick}/>

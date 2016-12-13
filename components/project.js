@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../styles/popup.css';
+import '../styles/project.css';
 
 const Project = (props) => {
 
