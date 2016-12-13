@@ -6,9 +6,10 @@
 }
 
 .menu__item {
-
+  display: block;
 }
 
 .menu__item:hover {
   background-color: #000086;
+  color: white;
 }
