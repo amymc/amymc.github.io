@@ -5,6 +5,7 @@ import StartBar from './startbar';
 import Trash from './trash';
 import Folder from './folder';
 import Menu from './menu';
+import Popup from './popup';
 import Project from './project';
 import '../styles/home.css';
 
@@ -13,12 +14,15 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showMenu: false,
+      showPopup: false,
       showProject: false,
       currentProject: null
     };
 
     this.handleFolderClick = this.handleFolderClick.bind(this);
-    this.renderMenu = this.renderMenu.bind(this);
+    this.handleRunClick = this.handleRunClick.bind(this);
+    this.handleStartClick = this.handleStartClick.bind(this);
   }
 
   handleFolderClick(id) {
@@ -29,11 +33,18 @@ class Home extends React.Component {
     });
   }
 
-  renderMenu() {
-    console.log('clicked!');
-    return (
-      <Menu />
-    );
+  handleRunClick() {
+    console.log('clicked run!', Menu);
+    this.setState({
+      showPopup: true
+    });
+  }
+
+  handleStartClick() {
+    console.log('clicked!', Menu);
+    this.setState({
+      showMenu: true
+    });
   }
 
   renderProject() {
@@ -62,7 +73,15 @@ class Home extends React.Component {
           this.renderProject() :
           null
         }
-        <StartBar onClick={this.renderMenu}/>
+        {this.state.showMenu ?
+          <Menu onClick={this.handleRunClick}/> :
+          null
+        }
+        {this.state.showPopup ?
+          <Popup /> :
+          null
+        }
+        <StartBar onClick={this.handleStartClick}/>
         <Trash />
       </div>
     );

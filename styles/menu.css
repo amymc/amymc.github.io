@@ -1,3 +1,14 @@
 .menu {
-  
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  background-color: #C0C7C8;
+}
+
+.menu__item {
+
+}
+
+.menu__item:hover {
+  background-color: #000086;
 }
