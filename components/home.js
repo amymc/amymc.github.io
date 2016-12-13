@@ -16,7 +16,9 @@ class Home extends React.Component {
       showProject: false,
       currentProject: null
     };
-    this.handleClick = this.handleClick.bind(this);
+
+    this.handleFolderClick = this.handleFolderClick.bind(this);
+    this.renderMenu = this.renderMenu.bind(this);
   }
 
   handleFolderClick(id) {
@@ -27,9 +29,9 @@ class Home extends React.Component {
     });
   }
 
-  handleStartClick() {
+  renderMenu() {
     console.log('clicked!');
-   return (
+    return (
       <Menu />
     );
   }
@@ -60,7 +62,7 @@ class Home extends React.Component {
           this.renderProject() :
           null
         }
-        <StartBar onClick={this.handleStartClick}/>
+        <StartBar onClick={this.renderMenu}/>
         <Trash />
       </div>
     );
