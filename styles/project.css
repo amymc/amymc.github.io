@@ -4,6 +4,10 @@
   background-color: #C0C7C8;
   padding: 2px;
   width: 80%;
+  border-top: 2px solid #9B9BA4;
+  border-right: 2px solid #4F4C1E;
+  border-bottom: 2px solid #4F4C1E;
+  border-left: 2px solid #9B9BA4;
 }
 
 /* use postcss nesting ?? */
@@ -13,15 +17,27 @@
   }
 }
 
-.project__image {
+.project__inner-wrapper {
+  display: block;
+  margin: 12px;
+  border-bottom: 1px solid #949494;
+}
+
+.project__image-wrapper {
   display: inline-block;
-  width: 30%;
+  width: 40%;
   background-color: olive;
+}
+
+.project__image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .project__info-wrapper {
   display: inline-block;
-  width: 70%;
+  width: 60%;
 }
 
 .project__title {
@@ -30,4 +46,8 @@
   color: white;
   padding: 0 2px;
   letter-spacing: 0.5px;
+}
+
+.project__button-wrapper {
+  border-top: 1px solid #E7E7E7;
 }

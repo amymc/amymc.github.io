@@ -16,13 +16,25 @@ const projectsData = [
     title: 'Ostmodern',
     url: 'ostmodern',
     image_urls: [
-      '../assets/dots/twodots_screenshot1.png',
-      '../assets/dots/dots_mobile_screenshot1.png'
+      'dots/twodots_screenshot1.png',
+      'dots/dots_mobile_screenshot1.png'
     ],
     description: 'blah blah bbc, bfi etc',
     company_url: 'http://ostmodern.co.uk',
     tech_stack: 'JS, JQuery, RequireJS, SASS'
-  }
+  },
+  {
+    id: 3,
+    title: 'Bragbet',
+    project_url: 'bragbet',
+    image_urls: [
+      'twodots_screenshot1.png',
+      'dots_mobile_screenshot1.png'
+      ],
+    description: 'blah blah etc',
+    company_url: null,
+    tech_stack: 'blah blah etc'
+  },
 ];
 
 export default projectsData;

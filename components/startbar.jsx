@@ -6,9 +6,10 @@ var StartBar = React.createClass({
   render: function() {
 
     return (
-      <div className='start-bar'>
-        <button>
-          START
+      <div className='startbar'>
+        <button className='startbar__button'>
+          <img className='startbar__button-icon' src='../assets/favicon-16x16.png' alt='start icon' />
+          <span className='startbar__button-text'> Start </span>
         </button>
       </div>
     );

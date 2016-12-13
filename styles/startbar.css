@@ -1,8 +1,27 @@
-.start-bar {
+.startbar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: #C0C7C8;
-  height: 40px;
+  height: 30px;
+  padding: 2px;
+}
+
+.startbar__button {
+  height: 26px;
+  padding: 0 2px;
+  border-top: 2px solid #9B9BA4;
+  border-right: 2px solid #4F4C1E;
+  border-bottom: 2px solid #4F4C1E;
+  border-left: 2px solid #9B9BA4;
+}
+
+.startbar__button-icon {
+  margin: 4px 0;
+  vertical-align: bottom;
+}
+
+.startbar__button-text {
+  margin: 4px 0;
 }
