@@ -17,6 +17,7 @@ class Home extends React.Component {
       showMenu: false,
       showPopup: false,
       showProject: false,
+      startButtonActive: false,
       currentProject: null
     };
 
@@ -44,7 +45,8 @@ class Home extends React.Component {
   handleStartClick() {
     console.log('clicked!', Menu);
     this.setState({
-      showMenu: true
+      showMenu: true,
+      startButtonActive: true
     });
   }
 
@@ -88,7 +90,7 @@ class Home extends React.Component {
           <Popup onClick={this.closePopup}/> :
           null
         }
-        <StartBar onClick={this.handleStartClick}/>
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive}/>
         <Trash />
       </div>
     );
