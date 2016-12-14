@@ -71,7 +71,7 @@ class Home extends React.Component {
 
 
   render() {
-    var { projects } = this.props;
+    var { menuItems, projects } = this.props;
 
     return (
       <div className='home'>
@@ -83,7 +83,7 @@ class Home extends React.Component {
           null
         }
         {this.state.showMenu ?
-          <Menu onClick={this.handleRunClick}/> :
+          <Menu onClick={this.handleRunClick} items={menuItems}/> :
           null
         }
         {this.state.showPopup ?
@@ -99,6 +99,7 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    menuItems: state.menuItems,
     projects: state.projects
   };
 }

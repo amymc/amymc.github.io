@@ -1,9 +1,7 @@
 import React from 'react';
-import MenuItem from './menuitem';
-//import Submenu from './submenu';
 import '../styles/menu.css';
 
-class Menu extends React.Component {
+class Submenu extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,10 +32,6 @@ class Menu extends React.Component {
         <li className='menu__item' onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
           <img className='menu__item-icon' src='../assets/os-icons/settings-icon.png' alt='settings icon'/>
           <span className='menu__item-title'> Settings &#x25b6; </span>
-          {/*this.state.hover ?
-            <Submenu /> :
-            null*/
-          }
         </li>
         <li className='menu__item' onClick={this.props.onClick}>
           <img className='menu__item-icon' src='../assets/os-icons/run-icon.png' alt='run icon'/>
@@ -48,5 +42,5 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default Submenu;
 
