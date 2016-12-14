@@ -17,37 +17,27 @@
   }
 }
 
+.popup__icon {
+  vertical-align: top;
+}
+
+.popup__outer-wrapper {
+  display: block;
+  margin: 15px;
+}
+
 .popup__inner-wrapper {
   display: inline-block;
+  margin: 0 20px;
 }
 
-.popup__image-wrapper {
-  display: inline-block;
-  width: 40%;
-  background-color: olive;
-}
-
-.popup__image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.popup__info-wrapper {
-  display: inline-block;
-  width: 60%;
-}
-
-.popup__title {
+.popup__header {
+  position: relative;
   display: block;
   background-color: #000086;
   color: white;
   padding: 0 2px;
   letter-spacing: 0.5px;
-}
-
-.popup__button-wrapper {
-  border-top: 1px solid #E7E7E7;
 }
 
 .popup__button {
@@ -56,4 +46,5 @@
   border-right: 2px solid #4F4C1E;
   border-bottom: 2px solid #4F4C1E;
   border-left: 2px solid #9B9BA4;
+  margin-top: 15px;
 }

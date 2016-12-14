@@ -3,13 +3,23 @@
   left: 0;
   bottom: 30px;
   background-color: #C0C7C8;
+  border-top: 2px solid #9B9BA4;
+  border-right: 2px solid #4F4C1E;
+  border-bottom: 2px solid #4F4C1E;
+  border-left: 2px solid #9B9BA4;
 }
 
 .menu__item {
   display: block;
+  line-height: 50px;
+  margin: 5px;
 }
 
 .menu__item:hover {
   background-color: #000086;
   color: white;
+}
+
+.menu__item-icon {
+  vertical-align: middle;
 }
