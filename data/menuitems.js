@@ -1,34 +1,44 @@
 const menuItems = {
-  main: [
+  items: [
     {
       title: 'Documents',
       image_url: 'documents-icon.png',
-      onClick: null,
-      onMouseOut: 'this.mouseOut',
-      onMouseOver: 'this.mouseOver'
+      onClick: false,
+      onMouseOut: true,
+      onMouseOver: true,
+      items: [
+        {
+          title: 'Random shit',
+          image_url: 'random-icon.png',
+          onClick: false,
+          onMouseOut: true,
+          onMouseOver: true
+        }
+      ]
     },
     {
       title: 'Settings',
       image_url: 'settings-icon.png',
-      onClick: null,
-      onMouseOut: 'this.mouseOut',
-      onMouseOver: 'this.mouseOver'
+      onClick: false,
+      onMouseOut: true,
+      onMouseOver: true,
+      items: [
+        {
+          title: 'Control Panel',
+          image_url: 'controlpanel-icon.png',
+          onClick: 'this.props.onClick',
+          onMouseOut: false,
+          onMouseOver: false
+        }
+      ]
     },
     {
       title: 'Run',
-      image_url: 'documents-icon.png',
-      onClick: 'this.props.onClick',
-      onMouseOut: null,
-      onMouseOver: null
-    }
-  ],
-  submneu: [
-    {
-      title: 'Control Panel',
-      image_url: 'controlpanel-icon.png',
-      onClick: 'this.props.onClick',
-      onMouseOut: null,
-      onMouseOver: null
+      image_url: 'run-icon.png',
+      onClick: true,
+      onMouseOut: false,
+      onMouseOver: false,
+      items: null
     }
   ]
 };

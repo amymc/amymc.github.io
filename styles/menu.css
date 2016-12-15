@@ -9,7 +9,20 @@
   border-left: 2px solid #9B9BA4;
 }
 
+.menu--submenu {
+  position: absolute;
+  left: 140px;
+  top: 0;
+  background-color: #C0C7C8;
+  border-top: 2px solid #9B9BA4;
+  border-right: 2px solid #4F4C1E;
+  border-bottom: 2px solid #4F4C1E;
+  border-left: 2px solid #9B9BA4;
+}
+
+
 .menu__item {
+  position: relative;
   display: block;
   line-height: 50px;
   margin: 5px;

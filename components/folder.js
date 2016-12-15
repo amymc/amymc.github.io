@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import '../styles/folder.css';
 
 const Folder = (props) => {
-
-  //render() {
-  var { project } = props;
+  const { project } = props;
 
   return (
     <div className='folder' onClick={() => props.onClick(project.id)}>

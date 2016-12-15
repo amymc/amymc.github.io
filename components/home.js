@@ -71,7 +71,7 @@ class Home extends React.Component {
 
 
   render() {
-    var { menuItems, projects } = this.props;
+    const { menuItems, projects } = this.props;
 
     return (
       <div className='home'>
@@ -99,7 +99,7 @@ class Home extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    menuItems: state.menuItems,
+    menuItems: state.menuItems.items,
     projects: state.projects
   };
 }

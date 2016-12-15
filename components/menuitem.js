@@ -1,4 +1,5 @@
 import React from 'react';
+import Menu from './menu';
 import '../styles/menu.css';
 
 class MenuItem extends React.Component {
@@ -15,7 +16,10 @@ class MenuItem extends React.Component {
   }
 
   mouseOver() {
-    this.setState({hover: true});
+    if (this.props.item.onMouseOver) {
+      console.log('setting state');
+      this.setState({hover: true});
+    }
   }
 
   mouseOut() {
@@ -23,25 +27,17 @@ class MenuItem extends React.Component {
   }
 
   render() {
+    const { item } = this.props;
+
     return (
-      <ul className='menu'>
-        <li className='menu__item'>
-          <img className='menu__item-icon' src='../assets/os-icons/documents-icon.png' alt='documents icon'/>
-          <span className='menu__item-title'> Documents &#x25b6; </span>
-        </li>
-        <li className='menu__item' onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-          <img className='menu__item-icon' src='../assets/os-icons/settings-icon.png' alt='settings icon'/>
-          <span className='menu__item-title'> Settings &#x25b6; </span>
-          {this.state.hover ?
-            <Submenu /> :
-            null
-          }
-        </li>
-        <li className='menu__item' onClick={this.props.onClick}>
-          <img className='menu__item-icon' src='../assets/os-icons/run-icon.png' alt='run icon'/>
-          <span className='menu__item-title'> Run </span>
-        </li>
-      </ul>
+      <li className='menu__item' onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+        <img className='menu__item-icon' src={`../assets/os-icons/${item.image_url}`} alt={item.title}/>
+        <span className='menu__item-title'> {item.title} </span>
+         {this.state.hover ?
+          <Menu items={item.items} type='submenu'/> :
+          null
+        }
+      </li>
     );
   }
 }

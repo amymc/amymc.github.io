@@ -5,7 +5,7 @@ import '../styles/project.css';
 const Project = (props) => {
 
 //  render() {
-  var project = props;
+  const project = props;
 
   return (
     <div className='project'>
@@ -15,7 +15,7 @@ const Project = (props) => {
       <div className='project__inner-wrapper'>
         <div className='project__image-wrapper'>
           { project.image_urls.map((url, index) => {
-            return <img key={index} className='project__image' alt='' src={`../assets/${url}`} />
+            return <img key={index} className='project__image' alt={project.title} src={`../assets/${url}`} />
           })}
         </div>
         <div className='project__info-wrapper'>
