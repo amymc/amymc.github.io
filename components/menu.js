@@ -33,7 +33,7 @@ class Menu extends React.Component {
       <ul className={'menu' + (this.props.type ? ' menu--submenu' : '')}>
 
         {items.map((item, index) => {
-          return <MenuItem key={index} item={item} />
+          return <MenuItem key={index} item={item} onClick={this.props.onClick}/>
         })}
         
       </ul>

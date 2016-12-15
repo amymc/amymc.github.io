@@ -1,4 +1,5 @@
 import React from 'react';
+import TitleBar from './titlebar';
 import '../styles/startbar.css';
 
 const StartBar = (props) => {
@@ -8,6 +9,7 @@ const StartBar = (props) => {
         <img className='startbar__button-icon' src='../assets/favicon-16x16.png' alt='start icon' />
         <span className='startbar__button-text'> Start </span>
       </button>
+      <TitleBar />
     </div>
   )
 }
