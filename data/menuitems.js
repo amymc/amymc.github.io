@@ -6,13 +6,15 @@ const menuItems = {
       onClick: false,
       onMouseOut: true,
       onMouseOver: true,
+      isSubmenu: false,
       items: [
         {
           title: 'Random shit',
           image_url: 'random-icon.png',
           onClick: false,
           onMouseOut: true,
-          onMouseOver: true
+          onMouseOver: true,
+          isSubmenu: true,
         }
       ]
     },
@@ -22,13 +24,15 @@ const menuItems = {
       onClick: false,
       onMouseOut: true,
       onMouseOver: true,
+      isSubmenu: false,
       items: [
         {
           title: 'Control Panel',
           image_url: 'controlpanel-icon.png',
           onClick: 'this.props.onClick',
           onMouseOut: false,
-          onMouseOver: false
+          onMouseOver: false,
+          isSubmenu: true
         }
       ]
     },
@@ -38,6 +42,7 @@ const menuItems = {
       onClick: true,
       onMouseOut: false,
       onMouseOver: false,
+      isSubmenu: false,
       items: null
     }
   ]
