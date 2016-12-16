@@ -14,7 +14,6 @@ class Menu extends React.Component {
 
     // this.mouseOver = this.mouseOver.bind(this);
     // this.mouseOut = this.mouseOut.bind(this);
-    console.log('this.props', this.props);
   }
 
   // mouseOver() {
@@ -27,7 +26,6 @@ class Menu extends React.Component {
 
   render() {
     const { items } = this.props;
-    console.log('items', items);
 
     return (
       <ul className={'menu' + (this.props.type ? ' menu--submenu' : '')}>
