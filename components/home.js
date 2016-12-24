@@ -14,6 +14,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      popup: null,
       showMenu: false,
       showPopup: false,
       showProject: false,
@@ -22,7 +23,7 @@ class Home extends React.Component {
     };
 
     this.handleFolderClick = this.handleFolderClick.bind(this);
-    this.handleRunClick = this.handleRunClick.bind(this);
+    this.handlePopupClick = this.handlePopupClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
     this.closePopup = this.closePopup.bind(this);
   }
@@ -35,9 +36,10 @@ class Home extends React.Component {
     });
   }
 
-  handleRunClick() {
-    console.log('clicked run!', Menu);
+  handlePopupClick(popup) {
+    console.log('clicked run!', popup);
     this.setState({
+      popup: popup,
       showPopup: true
     });
   }
@@ -83,11 +85,11 @@ class Home extends React.Component {
           null
         }
         {this.state.showMenu ?
-          <Menu onClick={this.handleRunClick} items={menuItems}/> :
+          <Menu onClick={this.handlePopupClick} items={menuItems}/> :
           null
         }
         {this.state.showPopup ?
-          <Popup onClick={this.closePopup}/> :
+          <Popup onClick={this.closePopup} {...this.state.popup} /> :
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive}/>

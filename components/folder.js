@@ -1,4 +1,5 @@
 import React from 'react';
+//remove ??
 import { connect } from 'react-redux';
 import '../styles/folder.css';
 

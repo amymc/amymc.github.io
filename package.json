@@ -39,6 +39,7 @@
     "live-server": "^1.0.0",
     "node-sass": "^3.13.0",
     "postcss": "^5.2.6",
+    "postcss-autoreset": "^1.2.1",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.0",
     "postcss-nested": "^1.0.0",
