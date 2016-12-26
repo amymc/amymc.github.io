@@ -23,22 +23,36 @@
 }
 
 
-.menu__item {
+.menu-item {
   position: relative;
   display: block;
   line-height: 50px;
   margin: 5px;
 }
 
-.menu__item--submneu {
+.menu-item--submneu {
   margin: 2px;
 }
 
-.menu__item:hover {
+.menu-item:hover {
   background-color: #000086;
   color: white;
 }
 
-.menu__item-icon {
+.menu-item__title {
+  position: relative;
+}
+
+.menu-item__title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  height: 1px;
+  width: 8px;
+  background-color: black;
+}
+
+.menu-item__icon {
   vertical-align: middle;
 }
