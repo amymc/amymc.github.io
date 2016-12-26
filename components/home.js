@@ -26,6 +26,7 @@ class Home extends React.Component {
     this.handlePopupClick = this.handlePopupClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
     this.closePopup = this.closePopup.bind(this);
+    this.closeProject = this.closeProject.bind(this);
   }
 
   handleFolderClick(title) {
@@ -57,13 +58,19 @@ class Home extends React.Component {
     });
   }
 
+  closeProject() {
+    this.setState({
+      showProject: false
+    });
+  }
+
   renderProject() {
     var currentProject = this.props.projects.filter((project) => {
         return project.title === this.state.currentProject;
     })[0];
 
     return (
-      <Project {...currentProject}/>
+      <Project {...currentProject} onClick={this.closeProject}/>
     );
   }
 

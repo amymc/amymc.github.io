@@ -17,6 +17,11 @@
   }
 }
 
+.project__header {
+  position: relative;
+  display: block;
+}
+
 .project__inner-wrapper {
   display: block;
   margin: 12px;

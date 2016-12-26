@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CloseButton from './closebutton';
 import '../styles/project.css';
 
 const Project = (props) => {
@@ -9,9 +10,12 @@ const Project = (props) => {
 
   return (
     <div className='project'>
-      <h1 className='project__title'>
-        {project.title}
-      </h1>
+      <div className='project__header'>
+        <h1 className='project__title'>
+          {project.title}
+        </h1>
+        <CloseButton onClick={props.onClick}/>
+      </div>
       <div className='project__inner-wrapper'>
         <div className='project__image-wrapper'>
           { project.image_urls.map((url, index) => {
