@@ -41,7 +41,7 @@ class MenuItem extends React.Component {
    // console.log('item', item);
 
     return (
-      <li className={'menu-item' + (item.isSubmenu ? ' menu-item--submenu' : '')} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} onClick={(e) => this.props.onClick(e, item.popup)}>
+      <li className={'menu-item' + (item.isSubmenu ? ' menu-item--submenu' : '')} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} onClick={item.onClick ? (e) => this.props.onClick(e, item.popup) : null}>
         <img className='menu-item__icon' src={`../assets/os-icons/${item.image_url}`} alt={item.title}/>
         <span className='menu-item__title'> {item.title} </span>
          {this.state.hover ?

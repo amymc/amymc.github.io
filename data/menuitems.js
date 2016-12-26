@@ -31,7 +31,7 @@ const menuItems = {
         {
           title: "Control Panel",
           image_url: "controlpanel-icon.png",
-          onClick: "this.props.onClick",
+          onClick: true,
           onMouseOut: false,
           onMouseOver: false,
           isSubmenu: true,
