@@ -9,7 +9,10 @@ const StartBar = (props) => {
         <img className='startbar__button-icon' src='../assets/favicon-16x16.png' alt='start icon' />
         <span className='startbar__button-text'> Start </span>
       </button>
-      <TitleBar />
+      {props.currentProject ?
+        <TitleBar {...props}/> :
+        null
+      }
     </div>
   )
 }

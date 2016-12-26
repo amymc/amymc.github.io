@@ -28,16 +28,16 @@ class Home extends React.Component {
     this.closePopup = this.closePopup.bind(this);
   }
 
-  handleFolderClick(id) {
-    console.log('id', id);
+  handleFolderClick(title) {
     this.setState({
       showProject: true,
-      currentProject: id
+      currentProject: title
     });
   }
 
-  handlePopupClick(popup) {
-    console.log('clicked run!', popup);
+  handlePopupClick(e, popup) {
+    e.preventDefault();
+    e.stopPropagation();
     this.setState({
       popup: popup,
       showPopup: true
@@ -45,7 +45,6 @@ class Home extends React.Component {
   }
 
   handleStartClick() {
-    console.log('clicked!', Menu);
     this.setState({
       showMenu: true,
       startButtonActive: true
@@ -60,17 +59,13 @@ class Home extends React.Component {
 
   renderProject() {
     var currentProject = this.props.projects.filter((project) => {
-      console.log('project.id', project.id, 'this.state.currentProject', this.state.currentProject);
-        return project.id === this.state.currentProject;
+        return project.title === this.state.currentProject;
     })[0];
 
-    console.log('currentProject', currentProject);
     return (
       <Project {...currentProject}/>
     );
   }
-
-
 
   render() {
     const { menuItems, projects } = this.props;
@@ -92,7 +87,7 @@ class Home extends React.Component {
           <Popup onClick={this.closePopup} {...this.state.popup} /> :
           null
         }
-        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive}/>
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} currentProject={this.state.currentProject}/>
         <Trash />
       </div>
     );
