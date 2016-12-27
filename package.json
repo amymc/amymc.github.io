@@ -38,12 +38,6 @@
     "eslint-plugin-react": "^6.0.0",
     "live-server": "^1.0.0",
     "node-sass": "^3.13.0",
-    "postcss": "^5.2.6",
-    "postcss-autoreset": "^1.2.1",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-loader": "^1.2.0",
-    "postcss-nested": "^1.0.0",
-    "postcss-nesting": "^2.3.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3"

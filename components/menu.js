@@ -1,6 +1,5 @@
 import React from 'react';
 import MenuItem from './menuitem';
-//import Submenu from './submenu';
 import '../styles/menu.scss';
 
 class Menu extends React.Component {
@@ -15,14 +14,6 @@ class Menu extends React.Component {
     // this.mouseOver = this.mouseOver.bind(this);
     // this.mouseOut = this.mouseOut.bind(this);
   }
-
-  // mouseOver() {
-  //   this.setState({hover: true});
-  // }
-
-  // mouseOut() {
-  //   this.setState({hover: false});
-  // }
 
   render() {
     const { items } = this.props;
