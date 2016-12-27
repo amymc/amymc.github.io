@@ -5,6 +5,7 @@
   display: block;
   line-height: 50px;
   margin: 5px;
+  color: $black;
 
   &:hover {
     background-color: $navy-blue;
@@ -31,5 +32,10 @@
 
   &__icon {
     vertical-align: middle;
+
+    &--submenu {
+      width: 35px;
+      height: auto;
+    }
   }
 }
