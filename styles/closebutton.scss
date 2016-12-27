@@ -1,4 +1,8 @@
+@import './base/colours';
+@import './base/borders';
+
 .closebutton {
+  @include border($santas-grey, $thatch-green);
   position: absolute;
   right: 4px;
   top: 3px;
@@ -6,10 +10,6 @@
   bottom: 3px;
   font-family: arial;
   font-weight: bold;
-  background-color: #C0C7C8;
-  border-top: 2px solid #9B9BA4;
-  border-right: 2px solid #4F4C1E;
-  border-bottom: 2px solid #4F4C1E;
-  border-left: 2px solid #9B9BA4;
+  background-color: $submarine-grey;
   line-height: 0.5;
   }

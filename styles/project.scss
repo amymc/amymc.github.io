@@ -1,13 +1,13 @@
+@import './base/colours';
+@import './base/borders';
+
 .project {
+  @include border($santas-grey, $thatch-green);
   position: absolute;
   left: 10%;
-  background-color: #C0C7C8;
+  background-color: $submarine-grey;
   padding: 2px;
   width: 80%;
-  border-top: 2px solid #9B9BA4;
-  border-right: 2px solid #4F4C1E;
-  border-bottom: 2px solid #4F4C1E;
-  border-left: 2px solid #9B9BA4;
 
   @media (min-width: 540px) {
     width: 450px;
@@ -21,13 +21,12 @@
   &__inner-wrapper {
     display: block;
     margin: 12px;
-    border-bottom: 1px solid #949494;
+    border-bottom: 1px solid $dusty-grey;
   }
 
   &__image-wrapper {
     display: inline-block;
     width: 40%;
-    background-color: olive;
   }
 
   &__image {
@@ -43,13 +42,13 @@
 
   &__title {
     display: block;
-    background-color: #000086;
+    background-color: $navy-blue;
     color: white;
     padding: 0 2px;
     letter-spacing: 0.5px;
   }
 
   &__button-wrapper {
-    border-top: 1px solid #E7E7E7;
+    border-top: 1px solid $mercury-grey;
   }
 }

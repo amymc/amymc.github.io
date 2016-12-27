@@ -12,9 +12,8 @@ import PageNotFound from './components/PageNotFound';
 import ExampleComponent from './components/ExampleComponent';
 import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
 
-//import './styles/home.scss';
 import './styles/utilities/reset.scss';
-//import './styles/base/main.css';
+import './styles/base/main.scss';
 
 
 const routes = (

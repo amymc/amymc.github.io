@@ -1,8 +1,10 @@
+@import './colours';
+
 html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
-  background-color: #5EA8A8;
+  background-color: $aquamarine;
 }

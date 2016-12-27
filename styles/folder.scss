@@ -1,18 +1,18 @@
+@import './base/colours';
+@import './base/borders';
+
 .folder {
   display: inline-block;
   text-align: center;
 
   &__icon {
+  @include border($santas-grey, $thatch-green);
   position: relative;
   display: block;
-  background-color: #E0E348;
+  background-color: $folder-yellow;
   width: 50px;
   height: 35px;
   margin: 0 auto;
-  border-top: 2px solid #9B9BA4;
-  border-right: 2px solid #4F4C1E;
-  border-bottom: 2px solid #4F4C1E;
-  border-left: 2px solid #9B9BA4;
   border-radius: 3px;
 
     &::before {
@@ -22,7 +22,7 @@
       left: 0;
       right: 0;
       width: 28%;
-      border-bottom: 5px solid #E0E348;
+      border-bottom: 5px solid $folder-yellow;
       border-left: 6px solid transparent;
       border-right: 6px solid transparent;
     }
