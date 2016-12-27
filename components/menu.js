@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItem from './menuitem';
 //import Submenu from './submenu';
-import '../styles/menu.css';
+import '../styles/menu.scss';
 
 class Menu extends React.Component {
 

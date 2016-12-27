@@ -1,0 +1,47 @@
+.popup {
+  position: absolute;
+  left: 10%;
+  background-color: #C0C7C8;
+  padding: 2px;
+  width: 80%;
+  border-top: 2px solid #9B9BA4;
+  border-right: 2px solid #4F4C1E;
+  border-bottom: 2px solid #4F4C1E;
+  border-left: 2px solid #9B9BA4;
+
+  @media (min-width: 540px) {
+    width: 450px;
+  }
+
+  &__icon {
+    vertical-align: top;
+  }
+
+  &__outer-wrapper {
+    display: block;
+    margin: 15px;
+  }
+
+  &__inner-wrapper {
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  &__header {
+    position: relative;
+    display: block;
+    background-color: #000086;
+    color: white;
+    padding: 0 2px;
+    letter-spacing: 0.5px;
+  }
+
+  &__button {
+    padding: 0 2px;
+    border-top: 2px solid #9B9BA4;
+    border-right: 2px solid #4F4C1E;
+    border-bottom: 2px solid #4F4C1E;
+    border-left: 2px solid #9B9BA4;
+    margin-top: 15px;
+  }
+}

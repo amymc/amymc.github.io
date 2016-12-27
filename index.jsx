@@ -12,7 +12,9 @@ import PageNotFound from './components/PageNotFound';
 import ExampleComponent from './components/ExampleComponent';
 import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
 
-import './styles/home.css';
+//import './styles/home.scss';
+import './styles/utilities/reset.scss';
+//import './styles/base/main.css';
 
 
 const routes = (

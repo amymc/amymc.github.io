@@ -11,18 +11,11 @@ module.exports = {
   module: {
     loaders: [
       {
-        test:   /\.css$/,
-        //https://github.com/webpack/css-loader/issues/295
-        // include: [
-        //   path.resolve(__dirname, "not_exist_path")
-        // ],
-        loader: "style-loader!css-loader!postcss-loader"
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
       },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
     ],
-  },
-  postcss: function () {
-    return [require('postcss-autoreset'), require('postcss-nesting'), require('postcss-nested')];
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],

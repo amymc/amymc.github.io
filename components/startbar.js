@@ -1,6 +1,6 @@
 import React from 'react';
 import TitleBar from './titlebar';
-import '../styles/startbar.css';
+import '../styles/startbar.scss';
 
 const StartBar = (props) => {
   return (

@@ -1,0 +1,33 @@
+.menu-item {
+  position: relative;
+  display: block;
+  line-height: 50px;
+  margin: 5px;
+
+  &:hover {
+    background-color: #000086;
+    color: white;
+  }
+
+  &--submenu {
+    margin: 2px;
+  }
+
+  &__title {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 4px;
+      height: 1px;
+      width: 8px;
+      background-color: black;
+    }
+  }
+
+  &__icon {
+    vertical-align: middle;
+  }
+}

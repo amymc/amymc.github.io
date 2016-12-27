@@ -1,9 +1,8 @@
 .folder {
   display: inline-block;
   text-align: center;
-}
 
-.folder__icon {
+  &__icon {
   position: relative;
   display: block;
   background-color: #E0E348;
@@ -15,21 +14,22 @@
   border-bottom: 2px solid #4F4C1E;
   border-left: 2px solid #9B9BA4;
   border-radius: 3px;
-}
 
-.folder__icon::before {
-  content: '';
-  position: absolute;
-  top: -6px;
-  left: 0;
-  right: 0;
-  width: 28%;
-  border-bottom: 5px solid #E0E348;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-}
+    &::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 0;
+      right: 0;
+      width: 28%;
+      border-bottom: 5px solid #E0E348;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+    }
+  }
 
-.folder__title {
-  color: white;
-  font-family: arial;
+  &__title {
+    color: white;
+    font-family: arial;
+  }
 }

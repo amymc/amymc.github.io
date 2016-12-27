@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/menu.css';
+//import '../styles/menu.css';
 
 class Submenu extends React.Component {
 

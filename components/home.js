@@ -7,7 +7,7 @@ import Folder from './folder';
 import Menu from './menu';
 import Popup from './popup';
 import Project from './project';
-import '../styles/home.css';
+import '../styles/home.scss';
 
 class Home extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/closebutton.css';
+import '../styles/closebutton.scss';
 
 const CloseButton = (props) => {
   return (

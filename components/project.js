@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CloseButton from './closebutton';
-import '../styles/project.css';
+import '../styles/project.scss';
 
 const Project = (props) => {
 

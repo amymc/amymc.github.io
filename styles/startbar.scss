@@ -1,0 +1,40 @@
+.startbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #C0C7C8;
+  height: 30px;
+  padding: 2px;
+
+  &__button {
+    height: 26px;
+    padding: 0 2px;
+    background-color: #C0C7C8;
+    border-top: 2px solid #9B9BA4;
+    border-right: 2px solid #4F4C1E;
+    border-bottom: 2px solid #4F4C1E;
+    border-left: 2px solid #9B9BA4;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &--active {
+      border-top: 2px solid #4F4C1E;
+      border-right: 2px solid #9B9BA4;
+      border-bottom: 2px solid #9B9BA4;
+      border-left: 2px solid #4F4C1E;
+    }
+  }
+
+  &__button-icon {
+    margin: 4px 0;
+    vertical-align: bottom;
+  }
+
+  &__button-text {
+    display: inline-block;
+    margin: 4px;
+    vertical-align: top;
+  }
+}
