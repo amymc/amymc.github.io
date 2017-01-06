@@ -31,9 +31,9 @@ class MenuItem extends React.Component {
   }
 
   mouseOut() {
-    // this.closeCallback = setTimeout(() => {
-    //   this.setState({ hover: false });
-    // }, 50);
+    this.closeCallback = setTimeout(() => {
+      this.setState({ hover: false });
+    }, 50);
   }
 
   render() {
