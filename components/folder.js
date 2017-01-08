@@ -1,7 +1,7 @@
 import React from 'react';
 //remove ??
 import { connect } from 'react-redux';
-import '../styles/folder.scss';
+import '../styles/components/folder.scss';
 
 const Folder = (props) => {
   const { project } = props;

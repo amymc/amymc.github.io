@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/titlebar.scss';
+import '../styles/components/titlebar.scss';
 
 const TitleBar = (props) => {
   return (

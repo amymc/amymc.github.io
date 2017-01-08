@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseButton from './closebutton';
-import '../styles/popup.scss';
+import '../styles/components/popup.scss';
 
 const Popup = (props) => {
   return (

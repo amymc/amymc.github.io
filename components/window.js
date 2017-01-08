@@ -2,7 +2,7 @@ import React from 'react';
 import Draggable, {DraggableCore} from 'react-draggable';
 import Project from './project';
 import CloseButton from './closebutton';
-import '../styles/window.scss';
+import '../styles/components/window.scss';
 
 
 class Window extends React.Component {

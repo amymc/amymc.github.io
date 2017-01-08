@@ -1,5 +1,5 @@
-@import './base/colours';
-@import './base/borders';
+@import '../base/colours';
+@import '../base/borders';
 
 .window {
   @include border($santas-grey, $thatch-green);
