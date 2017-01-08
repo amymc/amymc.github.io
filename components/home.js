@@ -71,7 +71,7 @@ class Home extends React.Component {
     })[0];
 
     return (
-      <Window {...currentProject} onClick={this.closeProject}/>
+      <Window item={currentProject} isProject={true} onClick={this.closeProject}/>
     );
   }
 
@@ -92,7 +92,7 @@ class Home extends React.Component {
           null
         }
         {this.state.showPopup ?
-          <Popup onClick={this.closePopup} {...this.state.popup} /> :
+          <Window item={this.state.popup} isProject={false} onClick={this.closePopup}/> :
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} currentProject={this.state.currentProject}/>
