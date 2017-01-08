@@ -2,21 +2,6 @@
 @import './base/borders';
 
 .project {
-  @include border($santas-grey, $thatch-green);
-  position: absolute;
-  left: 10%;
-  background-color: $submarine-grey;
-  padding: 2px;
-  width: 80%;
-
-  @media (min-width: 540px) {
-    width: 450px;
-  }
-
-  &__header {
-    position: relative;
-    display: block;
-  }
 
   &__inner-wrapper {
     display: block;
@@ -38,14 +23,6 @@
   &__info-wrapper {
     display: inline-block;
     width: 60%;
-  }
-
-  &__title {
-    display: block;
-    background-color: $navy-blue;
-    color: white;
-    padding: 0 2px;
-    letter-spacing: 0.5px;
   }
 
   &__button-wrapper {

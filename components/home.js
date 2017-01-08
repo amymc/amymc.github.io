@@ -6,7 +6,8 @@ import Trash from './trash';
 import Folder from './folder';
 import Menu from './menu';
 import Popup from './popup';
-import Project from './project';
+//import Project from './project';
+import Window from './window';
 import '../styles/home.scss';
 
 class Home extends React.Component {
@@ -65,12 +66,12 @@ class Home extends React.Component {
   }
 
   renderProject() {
-    var currentProject = this.props.projects.filter((project) => {
+    const currentProject = this.props.projects.filter((project) => {
         return project.title === this.state.currentProject;
     })[0];
 
     return (
-      <Project {...currentProject} onClick={this.closeProject}/>
+      <Window {...currentProject} onClick={this.closeProject}/>
     );
   }
 
