@@ -13,9 +13,11 @@ const menuItems = {
           title: "Random shit",
           image_url: "random-icon.png",
           onClick: false,
-          onMouseOut: true,
-          onMouseOver: true,
+          onMouseOut: false,
+          onMouseOver: false,
           isSubmenu: true,
+          popup: null,
+          items: null
         }
       ]
     },

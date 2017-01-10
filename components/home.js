@@ -47,9 +47,10 @@ class Home extends React.Component {
   }
 
   handleStartClick() {
+    // toggle states on button click
     this.setState({
-      showMenu: true,
-      startButtonActive: true
+      showMenu: !this.state.showMenu,
+      startButtonActive: !this.state.startButtonActive
     });
   }
 

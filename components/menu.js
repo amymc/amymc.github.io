@@ -17,7 +17,6 @@ class Menu extends React.Component {
 
   render() {
     const { items } = this.props;
-    console.log('onclick', this.props.onClick);
 
     return (
       <ul className={'menu' + (this.props.type ? ' menu--submenu' : '')}>
