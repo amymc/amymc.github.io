@@ -49,7 +49,7 @@ const menuItems = {
       ]
     },
     {
-      title: "Run",
+      title: "Run...",
       image_url: "run-icon.png",
       onClick: true,
       onMouseOut: false,

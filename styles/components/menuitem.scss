@@ -9,7 +9,13 @@
 
   &:hover {
     background-color: $navy-blue;
-    color: white;
+    color: $white;
+
+    .menu-item__title--has-arrow {
+      &::after {
+        border-left: 5px solid $white;
+      }
+    }
   }
 
   &--submenu {
@@ -27,6 +33,18 @@
       height: 1px;
       width: 8px;
       background-color: $black;
+    }
+
+    &--has-arrow {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid $black;
+      }
     }
   }
 
