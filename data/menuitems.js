@@ -41,7 +41,10 @@ const menuItems = {
             {
               title: "Error",
               image_url: "error-icon.png",
-              message: "Control panel not found.\nNevermind. Control is an illusion.",
+              message:  [
+                          "Control panel not found.",
+                          "Nevermind. Control is an illusion."
+                        ],
               button_text: "Cancel"
             },
           items: null
@@ -59,7 +62,9 @@ const menuItems = {
         {
           title: "Warning",
           image_url: "warning-icon.png",
-          message: "You can/t run forever",
+          message: [
+                      "You can't run forever"
+                    ],
           button_text: "Abort"
         },
       items: null
