@@ -1,4 +1,5 @@
 import React from 'react';
+import Clock from './clock';
 import TitleBar from './titlebar';
 import '../styles/components/startbar.scss';
 
@@ -13,6 +14,7 @@ const StartBar = (props) => {
         <TitleBar {...props}/> :
         null
       }
+      <Clock />
     </div>
   )
 }

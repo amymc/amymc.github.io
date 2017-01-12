@@ -1,13 +1,7 @@
-@import '../base/colours';
-@import '../base/borders';
+@import '../base/block';
 
 .titlebar {
-  @include border($thatch-green, $santas-grey);
-  display: inline-block;
-  height: 26px;
+  @extend %block;
   margin: 0 5px;
-  padding: 0 5px;
-  line-height: 26px;
   width: 130px;
-  vertical-align: top;
 }

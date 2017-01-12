@@ -1,0 +1,8 @@
+@import './colours';
+@import './borders';
+
+%block {
+  @include border($thatch-green, $santas-grey);
+  padding: 0 5px;
+  line-height: 26px;
+}

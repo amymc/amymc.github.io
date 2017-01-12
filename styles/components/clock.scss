@@ -1,0 +1,6 @@
+@import '../base/block';
+
+.clock {
+  @extend %block;
+  margin-left: auto;
+}
