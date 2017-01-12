@@ -4,13 +4,15 @@
 .window {
   @include border($santas-grey, $thatch-green);
   position: absolute;
-  left: 10%;
+  left: 35px;
+  top: 50px;
   background-color: $submarine-grey;
   padding: 2px;
   width: 80%;
 
   @media (min-width: 540px) {
     width: 450px;
+    left: 55px;
   }
 
   &__header {

@@ -1,5 +1,6 @@
 @import '../base/colours';
 @import '../base/borders';
+@import '../base/buttons';
 
 .popup {
   @include border($santas-grey, $thatch-green);
@@ -37,7 +38,7 @@
   }
 
   &__button {
-    @include border($santas-grey, $thatch-green);
+    @extend %button;
     padding: 0 2px;
     margin-top: 15px;
   }

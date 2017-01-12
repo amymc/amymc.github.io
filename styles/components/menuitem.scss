@@ -5,6 +5,7 @@
   display: block;
   line-height: 50px;
   margin: 5px;
+  padding-right: 10px;
   color: $black;
 
   &:hover {
@@ -39,6 +40,7 @@
       &::after {
         content: '';
         position: absolute;
+        top: 0;
         width: 0; 
         height: 0; 
         border-top: 5px solid transparent;

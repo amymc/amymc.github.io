@@ -1,15 +1,12 @@
-@import '../base/colours';
-@import '../base/borders';
+@import '../base/buttons';
 
 .closebutton {
-  @include border($santas-grey, $thatch-green);
+  @extend %button;
   position: absolute;
   right: 4px;
   top: 3px;
-  font-size: 10px;
   bottom: 3px;
   font-family: arial;
   font-weight: bold;
-  background-color: $submarine-grey;
   line-height: 0.5;
-  }
+}

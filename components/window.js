@@ -42,7 +42,7 @@ class Window extends React.Component {
           </div>
           {this.props.isProject ?
             <Project {...item} /> :
-            <Popup {...item} />
+            <Popup {...item} onClick={this.props.onClick} />
           }
         </div>
       </Draggable>

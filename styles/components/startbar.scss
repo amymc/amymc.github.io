@@ -1,5 +1,5 @@
+@import '../base/buttons';
 @import '../base/colours';
-@import '../base/borders';
 
 .startbar {
   position: fixed;
@@ -11,17 +11,9 @@
   padding: 2px;
 
   &__button {
-    @include border($santas-grey, $thatch-green);
+    @extend %button;
     height: 26px;
     padding: 0 2px;
-    background-color: $submarine-grey;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &--active {
-      @include border($thatch-green, $santas-grey);
-    }
   }
 
   &__button-icon {
