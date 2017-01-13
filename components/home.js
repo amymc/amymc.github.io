@@ -74,11 +74,11 @@ class Home extends React.Component {
     const currentProject = this.props.projects.filter((project) => {
         return project.title === this.state.currentProject;
     })[0];
+    const index = this.currentProjects.indexOf(currentProject);
 
-    if (this.state.toggleProject === 'add') {
+    if (this.state.toggleProject === 'add' && index === -1) {
       this.currentProjects.push(currentProject);
-    } else {
-      const index = this.currentProjects.indexOf(currentProject);
+    } else if (this.state.toggleProject === 'remove') {
       this.currentProjects.splice(index, 1);
     }
 
