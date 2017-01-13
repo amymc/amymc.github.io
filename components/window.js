@@ -27,9 +27,8 @@ class Window extends React.Component {
   }
 
   render() {
-//  render() {
-  const { item } = this.props;
-  const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
+    const { item } = this.props;
+    const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
 
     return (
       <Draggable handle='.handle' {...dragHandlers}>
@@ -38,7 +37,7 @@ class Window extends React.Component {
             <h1 className='window__title'>
               {item.title}
             </h1>
-            <CloseButton onClick={this.props.onClick}/>
+            <CloseButton onClick={() => this.props.onClick(item.title)} />
           </div>
           {this.props.isProject ?
             <Project {...item} /> :

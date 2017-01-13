@@ -18,10 +18,12 @@ class Home extends React.Component {
       popup: null,
       showMenu: false,
       showPopup: false,
-      showProject: false,
+      toggleProject: false,
       startButtonActive: false,
-      currentProject: null
+      currentProjects: null
     };
+
+    this.currentProjects = [];
 
     this.handleFolderClick = this.handleFolderClick.bind(this);
     this.handlePopupClick = this.handlePopupClick.bind(this);
@@ -32,10 +34,11 @@ class Home extends React.Component {
 
   handleFolderClick(title) {
     this.setState({
-      showProject: true,
+      toggleProject: 'add',
       currentProject: title
     });
   }
+
 
   handlePopupClick(e, popup) {
     e.preventDefault();
@@ -60,9 +63,10 @@ class Home extends React.Component {
     });
   }
 
-  closeProject() {
+  closeProject(title) {
     this.setState({
-      showProject: false
+      toggleProject: 'remove',
+      currentProject: title
     });
   }
 
@@ -71,8 +75,17 @@ class Home extends React.Component {
         return project.title === this.state.currentProject;
     })[0];
 
+    if (this.state.toggleProject === 'add') {
+      this.currentProjects.push(currentProject);
+    } else {
+      const index = this.currentProjects.indexOf(currentProject);
+      this.currentProjects.splice(index, 1);
+    }
+
     return (
-      <Window item={currentProject} isProject={true} onClick={this.closeProject}/>
+      this.currentProjects.map((project, index) => {
+        return <Window key={index} item={project} isProject={true} onClick={this.closeProject}/>
+      })
     );
   }
 
@@ -84,7 +97,7 @@ class Home extends React.Component {
         { projects.map((project, index) => {
           return <Folder key={index} project={project} onClick={this.handleFolderClick}/>
         })}
-        {this.state.showProject ?
+        {this.state.toggleProject ?
           this.renderProject() :
           null
         }

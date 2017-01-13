@@ -7,27 +7,10 @@ import '../styles/components/project.scss';
 class Project extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state ={
-    //   activeDrags: 0
-    // };
-
-    // this.onStart = this.onStart.bind(this);
-    // this.onStop = this.onStop.bind(this);
   }
 
-  // onStart() {
-  //   this.setState({activeDrags: ++this.state.activeDrags});
-  // }
-
-  // onStop() {
-  //   this.setState({activeDrags: --this.state.activeDrags});
-  // }
-
   render() {
-//  render() {
-  const item = this.props;
-  //const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
+    const item = this.props;
 
     return (
       <div className='project'>

@@ -42,7 +42,7 @@ class Clock extends React.Component {
   componentDidMount(){
      window.setInterval(function () {
       this.setTime();
-    }.bind(this), 10000);
+    }.bind(this), 1000);
   }
 
   render() {
