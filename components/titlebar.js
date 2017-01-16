@@ -4,7 +4,7 @@ import '../styles/components/titlebar.scss';
 const TitleBar = (props) => {
   return (
     <div className='titlebar'>
-      {props.currentProject}
+      {props.project.title}
     </div>
   )
 }

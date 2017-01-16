@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as ProjectActions from '../actions';
 // import { connect } from 'react-redux';
 
 const propTypes = {
@@ -44,3 +47,19 @@ function App({ children, routes }) {
 App.propTypes = propTypes;
 
 export default App;
+
+// const mapStateToProps = state => ({
+//   menuItems: state.menuItems.items,
+//   openProjects: state.openProjects,
+//   projects: state.projects
+// });
+
+// const mapDispatchToProps = dispatch => ({
+//   actions: bindActionCreators(ProjectActions, dispatch)
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(App);
+

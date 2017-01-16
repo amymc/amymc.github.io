@@ -3,20 +3,37 @@ import Clock from './clock';
 import TitleBar from './titlebar';
 import '../styles/components/startbar.scss';
 
-const StartBar = (props) => {
-  return (
-    <div className='startbar'>
-      <button className={'startbar__button' + (props.active ? ' startbar__button--active' : '')} onClick={() => props.onClick()}>
-        <img className='startbar__button-icon' src='../assets/favicon-16x16.png' alt='start icon' />
-        <span className='startbar__button-text'> Start </span>
-      </button>
-      {props.currentProject ?
-        <TitleBar {...props}/> :
-        null
-      }
-      <Clock />
-    </div>
-  )
+class StartBar extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.renderTitleBar = this.renderTitleBar.bind(this);
+  }
+
+  renderTitleBar() {
+    return (
+      this.props.openProjects.map((project, index) => {
+          return <TitleBar key={index} project={project} />
+        })
+    );
+  }
+
+  render() {
+    return (
+      <div className='startbar'>
+        <button className={'startbar__button' + (this.props.active ? ' startbar__button--active' : '')} onClick={() => this.props.onClick()}>
+          <img className='startbar__button-icon' src='../assets/favicon-16x16.png' alt='start icon' />
+          <span className='startbar__button-text'> Start </span>
+        </button>
+        {this.props.openProjects ?
+          this.renderTitleBar() :
+          null
+        }
+        <Clock />
+      </div>
+    )
+  }
 }
 
 export default StartBar;

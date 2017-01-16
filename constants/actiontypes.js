@@ -1,0 +1,2 @@
+export const OPEN_PROJECT = 'OPEN_PROJECT';
+export const CLOSE_PROJECT = 'CLOSE_PROJECT';

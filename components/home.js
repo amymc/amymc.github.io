@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { bindActionCreators } from 'redux';
+import * as ProjectActions from '../actions';
 import StartBar from './startbar';
 import Trash from './trash';
 import Folder from './folder';
 import Menu from './menu';
-import Popup from './popup';
-//import Project from './project';
 import Window from './window';
 import '../styles/components/home.scss';
 
@@ -18,27 +18,13 @@ class Home extends React.Component {
       popup: null,
       showMenu: false,
       showPopup: false,
-      toggleProject: false,
-      startButtonActive: false,
-      currentProjects: null
+      startButtonActive: false
     };
 
-    this.currentProjects = [];
-
-    this.handleFolderClick = this.handleFolderClick.bind(this);
     this.handlePopupClick = this.handlePopupClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
     this.closePopup = this.closePopup.bind(this);
-    this.closeProject = this.closeProject.bind(this);
   }
-
-  handleFolderClick(title) {
-    this.setState({
-      toggleProject: 'add',
-      currentProject: title
-    });
-  }
-
 
   handlePopupClick(e, popup) {
     e.preventDefault();
@@ -63,44 +49,18 @@ class Home extends React.Component {
     });
   }
 
-  closeProject(title) {
-    this.setState({
-      toggleProject: 'remove',
-      currentProject: title
-    });
-  }
-
-  renderProject() {
-    const currentProject = this.props.projects.filter((project) => {
-        return project.title === this.state.currentProject;
-    })[0];
-    const index = this.currentProjects.indexOf(currentProject);
-
-    if (this.state.toggleProject === 'add' && index === -1) {
-      this.currentProjects.push(currentProject);
-    } else if (this.state.toggleProject === 'remove') {
-      this.currentProjects.splice(index, 1);
-    }
-
-    return (
-      this.currentProjects.map((project, index) => {
-        return <Window key={index} item={project} isProject={true} onClick={this.closeProject}/>
-      })
-    );
-  }
-
   render() {
-    const { menuItems, projects } = this.props;
+    const { actions, menuItems, projects } = this.props;
+    const openProjects = projects.filter(project => project.isOpen === true)
 
     return (
       <div className='home'>
         { projects.map((project, index) => {
-          return <Folder key={index} project={project} onClick={this.handleFolderClick}/>
+          return <Folder key={index} project={project} onClick={actions.openProject}/>
         })}
-        {this.state.toggleProject ?
-          this.renderProject() :
-          null
-        }
+        {openProjects.map((project, index) => {
+          return <Window key={index} item={project} isProject={true} onClick={actions.closeProject}/>
+        })}
         {this.state.showMenu ?
           <Menu onClick={this.handlePopupClick} items={menuItems}/> :
           null
@@ -109,22 +69,24 @@ class Home extends React.Component {
           <Window item={this.state.popup} isProject={false} onClick={this.closePopup}/> :
           null
         }
-        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} currentProject={this.state.currentProject}/>
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
         <Trash />
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    menuItems: state.menuItems.items,
-    projects: state.projects
-  };
-}
+const mapStateToProps = state => ({
+  menuItems: state.menuItems.items,
+  projects: state.projects
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ProjectActions, dispatch)
+});
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Home);
 
