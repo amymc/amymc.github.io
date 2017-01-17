@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import projects from './projects';
 import menuItems from './menuitems';
+import projects from './projects';
+import sideProjects from './sideprojects';
 
 const rootReducer = combineReducers({
-  projects,
   menuItems,
+  sideProjects,
+  projects,
   routing: routerReducer
 });
 

@@ -16,6 +16,8 @@
     "core-js": "^2.4.1",
     "current-input": "^1.1.0",
     "react": "^15.1.0",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.6",
     "react-router": "^2.4.1",

@@ -11,15 +11,21 @@ class Window extends React.Component {
     super(props);
 
     this.state ={
-      activeDrags: 0
+      activeDrags: 0,
+      zIndex: 1
     };
 
+    this.onClick = this.onClick.bind(this);
     this.onStart = this.onStart.bind(this);
     this.onStop = this.onStop.bind(this);
   }
 
+  onClick() {
+   // this.setState({zIndex: ++this.state.zIndex});
+  }
+
   onStart() {
-    this.setState({activeDrags: ++this.state.activeDrags});
+    this.setState({activeDrags: ++this.state.activeDrags, zIndex: ++this.state.zIndex});
   }
 
   onStop() {
@@ -31,8 +37,8 @@ class Window extends React.Component {
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
 
     return (
-      <Draggable handle='.handle' {...dragHandlers}>
-        <div className='window'>
+      <Draggable bounds="body" handle='.handle' {...dragHandlers}>
+        <div className='window' onClick={this.onClick}>
           <div className='window__header handle'>
             <h1 className='window__title'>
               {item.title}

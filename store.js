@@ -5,10 +5,12 @@ import rootReducer from './reducers';
 
 import menuItems from './data/menuitems';
 import projects from './data/projects';
+import sideProjects from './data/sideprojects';
 
 const defaultState = {
   menuItems,
-  projects
+  projects,
+  sideProjects
 };
 
 const store = createStore(

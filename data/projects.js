@@ -1,4 +1,4 @@
-const projectsData = [
+const projects = [
   {
     id: 1,
     title: 'Dots',
@@ -37,7 +37,7 @@ const projectsData = [
     company_url: null,
     tech_stack: 'blah blah etc',
     isOpen: false
-  },
+  }
 ];
 
-export default projectsData;
+export default projects;

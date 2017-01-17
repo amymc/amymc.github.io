@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as ProjectActions from '../actions';
+// import { DragDropContext } from 'react-dnd';
+// import HTML5Backend from 'react-dnd-html5-backend';
 import StartBar from './startbar';
 import Trash from './trash';
 import Folder from './folder';
@@ -77,8 +79,9 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  menuItems: state.menuItems.items,
-  projects: state.projects
+  menuItems: state.menuItems,
+  projects: state.projects,
+  sideProjects: state.sideProjects
 });
 
 const mapDispatchToProps = dispatch => ({
