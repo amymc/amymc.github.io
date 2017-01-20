@@ -16,6 +16,10 @@
     @extend %button;
     height: 26px;
     padding: 0 2px;
+
+    &--active {
+      @include border($thatch-green, $santas-grey);
+    }
   }
 
   &__button-icon {

@@ -5,10 +5,9 @@
   @include border($santas-grey, $thatch-green);
   background-color: $submarine-grey;
 
-   &:hover,
-    &:focus,
-    &:active,
-    &--active {
-      @include border($thatch-green, $santas-grey);
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    @include border($thatch-green, $santas-grey);
+  }
 }
