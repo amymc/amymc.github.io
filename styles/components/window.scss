@@ -1,18 +1,29 @@
 @import '../base/colours';
 @import '../base/borders';
 
+
+$total: 10;
+$topOffset: 35px;
+$leftOffset: 35px;
+
+@for $i from 1 through $total {
+  .window:nth-child(#{$i}) {
+    top: $topOffset;
+    left: $leftOffset;
+  }
+  $topOffset: $topOffset + 25px;
+  $leftOffset: $leftOffset + 10px;
+}
+
 .window {
   @include border($santas-grey, $thatch-green);
   position: absolute;
-  left: 35px;
-  top: 50px;
   background-color: $submarine-grey;
   padding: 2px;
   width: 80%;
 
   @media (min-width: 540px) {
     width: 450px;
-    left: 55px;
   }
 
   // &--selected {
@@ -31,6 +42,6 @@
     padding: 0 2px;
     letter-spacing: 0.5px;
     line-height: 20px;
-    height: 20px;
+    height: 18px;
   }
 }

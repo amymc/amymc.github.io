@@ -53,16 +53,18 @@ class Home extends React.Component {
 
   render() {
     const { actions, menuItems, projects } = this.props;
-    const openProjects = projects.filter(project => project.isOpen === true)
+    const openProjects = projects.filter(project => project.isOpen === true);
 
     return (
       <div className='home'>
-        { projects.map((project, index) => {
+        {projects.map((project, index) => {
           return <Folder key={index} project={project} onClick={actions.openProject}/>
         })}
-        {openProjects.map((project, index) => {
-          return <Window key={index} item={project} isProject={true} onClick={actions.closeProject}/>
-        })}
+        <div className='home__inner-wrapper'>
+          {openProjects.map((project, index) => {
+            return <Window key={index} item={project} isProject={true} onClick={actions.closeProject}/>
+          })}
+        </div>
         {this.state.showMenu ?
           <Menu onClick={this.handlePopupClick} items={menuItems}/> :
           null
