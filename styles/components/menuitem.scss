@@ -8,19 +8,36 @@
   padding-right: 10px;
   color: $black;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $navy-blue;
     color: $white;
-
-    .menu-item__title--has-arrow {
-      &::after {
-        border-left: 5px solid $white;
-      }
-    }
   }
 
   &--submenu {
     margin: 2px;
+    line-height: 30px;
+  }
+
+  &--has-arrow {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 8px;
+      width: 0; 
+      height: 0; 
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid $black;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        border-left: 5px solid $white;
+      }
+    }
   }
 
   &__title {
@@ -35,26 +52,13 @@
       width: 8px;
       background-color: $black;
     }
-
-    &--has-arrow {
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        width: 0; 
-        height: 0; 
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 5px solid $black;
-      }
-    }
   }
 
   &__icon {
     vertical-align: middle;
 
     &--submenu {
-      width: 35px;
+      width: 30px;
       height: auto;
     }
   }

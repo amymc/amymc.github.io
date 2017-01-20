@@ -5,7 +5,7 @@ function projects(state = [], action) {
   switch (action.type) {
 
     case types.OPEN_PROJECT:
-       return state.map(project =>
+      return state.map(project =>
         project.title === action.title ?
           { ...project, isOpen: true } :
           project
