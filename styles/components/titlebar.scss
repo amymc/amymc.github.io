@@ -2,6 +2,14 @@
 
 .titlebar {
   @extend %block;
-  margin: 0 5px;
+  margin-left: 3px;
   width: 130px;
+
+  &__icon {
+    margin-top: -2px;
+  }
+
+  &__text {
+    vertical-align: top;
+  }
 }
