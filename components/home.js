@@ -17,24 +17,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      popup: null,
       showMenu: false,
-      showPopup: false,
       startButtonActive: false
     };
 
-    this.handlePopupClick = this.handlePopupClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
-    this.closePopup = this.closePopup.bind(this);
-  }
-
-  handlePopupClick(e, popup) {
-    e.preventDefault();
-    e.stopPropagation();
-    this.setState({
-      popup: popup,
-      showPopup: true
-    });
   }
 
   handleStartClick() {
@@ -45,14 +32,9 @@ class Home extends React.Component {
     });
   }
 
-  closePopup() {
-    this.setState({
-      showPopup: false
-    });
-  }
-
   render() {
-    const { actions, menuItems, projects } = this.props;
+    const { actions, menuItems, popups, projects } = this.props;
+    const openPopups = popups.filter(popup => popup.isOpen === true);
     const openProjects = projects.filter(project => project.isOpen === true);
 
     return (
@@ -64,13 +46,12 @@ class Home extends React.Component {
           {openProjects.map((project, index) => {
             return <Window key={index} item={project} isProject={true} onClick={actions.closeProject}/>
           })}
+          {openPopups.map((popup, index) => {
+            return <Window key={index} item={popup} isProject={false} onClick={actions.closePopup}/>
+          })}
         </div>
         {this.state.showMenu ?
-          <Menu onClick={this.handlePopupClick} items={menuItems}/> :
-          null
-        }
-        {this.state.showPopup ?
-          <Window item={this.state.popup} isProject={false} onClick={this.closePopup}/> :
+          <Menu onClick={actions.openPopup} items={menuItems}/> :
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
@@ -82,6 +63,7 @@ class Home extends React.Component {
 
 const mapStateToProps = state => ({
   menuItems: state.menuItems,
+  popups: state.popups,
   projects: state.projects,
   sideProjects: state.sideProjects
 });

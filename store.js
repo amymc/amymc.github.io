@@ -4,11 +4,13 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import rootReducer from './reducers';
 
 import menuItems from './data/menuitems';
+import popups from './data/popups';
 import projects from './data/projects';
 import sideProjects from './data/sideprojects';
 
 const defaultState = {
   menuItems,
+  popups,
   projects,
   sideProjects
 };

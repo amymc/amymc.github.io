@@ -1,7 +1,7 @@
 import * as types from '../constants/actiontypes';
 
 function projects(state = [], action) {
-  console.log('state', state, 'action', action);
+  console.log('projects state', state, 'action', action);
   switch (action.type) {
 
     case types.OPEN_PROJECT:
