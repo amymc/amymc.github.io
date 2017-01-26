@@ -1,5 +1,5 @@
 import React from 'react';
-import Draggable, {DraggableCore} from 'react-draggable';
+import Draggable from 'react-draggable';
 import Popup from './popup';
 import Project from './project';
 import CloseButton from './closebutton';
@@ -11,21 +11,15 @@ class Window extends React.Component {
     super(props);
 
     this.state ={
-      activeDrags: 0,
-      zIndex: 1
+      activeDrags: 0
     };
 
-    this.onClick = this.onClick.bind(this);
     this.onStart = this.onStart.bind(this);
     this.onStop = this.onStop.bind(this);
   }
 
-  onClick() {
-   // this.setState({zIndex: ++this.state.zIndex});
-  }
-
   onStart() {
-    this.setState({activeDrags: ++this.state.activeDrags, zIndex: ++this.state.zIndex});
+    this.setState({activeDrags: ++this.state.activeDrags});
   }
 
   onStop() {
@@ -33,21 +27,21 @@ class Window extends React.Component {
   }
 
   render() {
-    const { item } = this.props;
+    const { item, zIndex } = this.props;
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
 
     return (
-      <Draggable bounds="body" handle='.handle' {...dragHandlers}>
-        <div className='window' onClick={this.onClick}>
+      <Draggable onMouseDown={() => this.props.onMouseDown(item.title)} bounds="body" handle='.handle' {...dragHandlers}>
+        <div style={{zIndex: zIndex}} className='window'>
           <div className='window__header handle'>
             <h1 className='window__title'>
               {item.title}
             </h1>
-            <CloseButton onClick={() => this.props.onClick(item.title)} />
+            <CloseButton onClick={() => this.props.onCloseClick(item.title)} />
           </div>
           {this.props.isProject ?
             <Project {...item} /> :
-            <Popup {...item} onClick={this.props.onClick} />
+            <Popup {...item} onClick={() => this.props.onCloseClick(item.title)} />
           }
         </div>
       </Draggable>

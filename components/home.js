@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as ProjectActions from '../actions';
-// import { DragDropContext } from 'react-dnd';
-// import HTML5Backend from 'react-dnd-html5-backend';
 import StartBar from './startbar';
 import Trash from './trash';
 import Folder from './folder';
@@ -17,11 +15,20 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedWindow: null,
       showMenu: false,
       startButtonActive: false
     };
 
+    this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
+  }
+
+  handleMouseDown(windowTitle) {
+    console.log('click!', windowTitle);
+    this.setState({
+      selectedWindow: windowTitle
+    });
   }
 
   handleStartClick() {
@@ -44,10 +51,14 @@ class Home extends React.Component {
         })}
         <div className='home__inner-wrapper'>
           {openProjects.map((project, index) => {
-            return <Window key={index} item={project} isProject={true} onClick={actions.closeProject}/>
+            const zIndex = project.title === this.state.selectedWindow ?
+              10 : 1;
+            return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject}/>
           })}
           {openPopups.map((popup, index) => {
-            return <Window key={index} item={popup} isProject={false} onClick={actions.closePopup}/>
+             const zIndex = popup.title === this.state.selectedWindow ?
+              10 : 1;
+            return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup}/>
           })}
         </div>
         {this.state.showMenu ?
