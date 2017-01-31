@@ -17,7 +17,7 @@ class Project extends React.Component {
         <div className='project__inner-wrapper'>
           <div className='project__image-wrapper'>
             { item.image_urls.map((url, index) => {
-              return <img key={index} className='project__image' alt={item.title} src={`../assets/${url}`} />
+              return <img key={index} className='project__image' alt={item.title} src={`../src/assets/${url}`} />
             })}
           </div>
           <div className='project__info-wrapper'>

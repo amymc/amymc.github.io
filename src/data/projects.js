@@ -4,8 +4,8 @@ const projects = [
     title: 'Dots',
     project_url: 'dots',
     image_urls: [
-      'twodots_screenshot1.png',
-      'dots_mobile_screenshot1.png'
+      'dots/twodots_screenshot1.png',
+      'dots/dots_mobile_screenshot1.png'
       ],
     description: 'blah blah etc',
     company_url: 'http://dots.co',
@@ -30,8 +30,8 @@ const projects = [
     title: 'Bragbet',
     project_url: 'bragbet',
     image_urls: [
-      'twodots_screenshot1.png',
-      'dots_mobile_screenshot1.png'
+      'dots/twodots_screenshot1.png',
+      'dots/dots_mobile_screenshot1.png'
       ],
     description: 'blah blah etc',
     company_url: null,
