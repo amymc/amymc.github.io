@@ -1,24 +1,16 @@
 {
-  "name": "spa-github-pages",
-  "version": "2.0.0",
-  "description": "Single Page Apps for GitHub Pages",
+  "name": "two_point_oh",
+  "version": "1.0.0",
+  "description": "",
   "scripts": {
     "build": "babel src -d __build__",
     "start": "webpack -d --watch & live-server --entry-file=404.html"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rafrex/spa-github-pages.git"
-  },
-  "author": "Rafael Pedicini <code@rafrex.com>",
-  "license": "MIT",
+  "author": "amymc",
   "dependencies": {
-    "core-js": "^2.4.1",
-    "current-input": "^1.1.0",
     "react": "^15.1.0",
-    "react-dnd": "^2.1.4",
-    "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.1.0",
+    "react-draggable": "^2.2.3",
     "react-redux": "^4.4.6",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.7",
@@ -41,7 +33,6 @@
     "file-loader": "^0.9.0",
     "live-server": "^1.0.0",
     "node-sass": "^3.13.0",
-    "react-draggable": "^2.2.3",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

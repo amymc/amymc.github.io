@@ -38,7 +38,6 @@ class MenuItem extends React.Component {
 
   render() {
     const { item } = this.props;
-   //console.log('item', item);
 
     return (
       <li className={'menu-item' + (item.isSubmenu ? ' menu-item--submenu' : '') + (item.onMouseOver ? ' menu-item--has-arrow' : '')} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut} onClick={item.onClick ? () => this.props.onClick(item.popup.title) : null}>

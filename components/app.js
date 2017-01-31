@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as ProjectActions from '../actions';
-// import { connect } from 'react-redux';
 
 const propTypes = {
   children: PropTypes.element.isRequired,

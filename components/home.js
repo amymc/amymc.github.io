@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as ProjectActions from '../actions';
 import StartBar from './startbar';
-import Trash from './trash';
 import Folder from './folder';
 import Menu from './menu';
 import Window from './window';
@@ -25,7 +24,6 @@ class Home extends React.Component {
   }
 
   handleMouseDown(windowTitle) {
-    console.log('click!', windowTitle);
     this.setState({
       selectedWindow: windowTitle
     });
@@ -66,7 +64,6 @@ class Home extends React.Component {
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
-        <Trash />
       </div>
     );
   }

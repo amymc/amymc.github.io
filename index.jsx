@@ -1,40 +1,41 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import 'current-input';
+import ReactDOM from 'react-dom';
+
+//import { render } from 'react-dom';
+//import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+//import 'current-input';
 
 import { Provider } from 'react-redux';
-import store, { history } from './store';
+//import store, { history } from './store';
+import store from './store';
 
-import App from './components/App';
+//import App from './components/App';
 import Home from './components/Home';
-import PageNotFound from './components/PageNotFound';
-import ExampleComponent from './components/ExampleComponent';
-import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
 
 import './styles/utilities/reset.scss';
 import './styles/base/main.scss';
 
 
-const routes = (
-  <Route path="/" mapMenuTitle="Home" component={App}>
-    <IndexRoute component={Home} />
+// const routes = (
+//   <Route path="/" mapMenuTitle="Home" component={App}>
+//     <IndexRoute component={Home} />
+//   </Route>
+// );
 
-    <Route path="example" mapMenuTitle="Example" component={ExampleComponent}>
-      <Route path="two-deep" mapMenuTitle="Two Deep" component={ExampleTwoDeepComponent} />
-    </Route>
-
-    <Route path="*" mapMenuTitle="Page Not Found" component={PageNotFound} />
-  </Route>
-);
-
-
-render(
+ReactDOM.render(
   <Provider store={store}>
-    <Router
-      history={browserHistory}
-      routes={routes}
-    />
+    <Home />
   </Provider>,
   document.getElementById('root')
 );
+
+
+// render(
+//   <Provider store={store}>
+//     <Router
+//       history={browserHistory}
+//       routes={routes}
+//     />
+//   </Provider>,
+//   document.getElementById('root')
+// );
