@@ -62,7 +62,7 @@ class Home extends React.Component {
           })}
         </div>
         {this.state.showMenu ?
-          <Menu onClick={actions.openPopup} items={menuItems}/> :
+          <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick}/> :
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
