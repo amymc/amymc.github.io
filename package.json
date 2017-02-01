@@ -1,7 +1,7 @@
 {
-  "name": "spa-github-pages",
-  "version": "2.0.0",
-  "description": "Single Page Apps for GitHub Pages",
+  "name": "two_point_oh",
+  "version": "1.0.0",
+  "description": "",
   "homepage": "https://amymccarthy.co/two_point_oh",
   "scripts": {
     "build": "babel src -d __build__",
