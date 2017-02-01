@@ -2,9 +2,12 @@
   "name": "spa-github-pages",
   "version": "2.0.0",
   "description": "Single Page Apps for GitHub Pages",
+  "homepage": "https://amymccarthy.co/two_point_oh",
   "scripts": {
     "build": "babel src -d __build__",
-    "start": "webpack -d --watch & live-server --entry-file=index.html"
+    "start": "webpack -d --watch & live-server --entry-file=index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.0.0",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.12.0",
     "live-server": "^1.0.0",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.1.1",
