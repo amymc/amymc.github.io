@@ -5,7 +5,7 @@ import '../styles/components/popup.scss';
 const Popup = (props) => {
   return (
     <div className='popup__outer-wrapper'>
-      <img className='popup__icon' src={`../src/assets/os-icons/${props.image_url}`} alt={props.title} />
+      <img className='popup__icon' src={`assets/os-icons/${props.image_url}`} alt={props.title} />
       <div className='popup__inner-wrapper'>
         <div className='popup__text'>
           <p>{props.message[0]}</p>
