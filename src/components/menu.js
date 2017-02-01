@@ -3,15 +3,10 @@ import MenuItem from './menuitem';
 import '../styles/components/menu.scss';
 
 class Menu extends React.Component {
-
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   hover: false
-    // };
-
-   this.onPageClick = this.onPageClick.bind(this);
+    this.onPageClick = this.onPageClick.bind(this);
   }
 
   componentDidMount() {
@@ -46,4 +41,3 @@ class Menu extends React.Component {
 }
 
 export default Menu;
-

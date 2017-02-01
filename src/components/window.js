@@ -5,7 +5,6 @@ import Project from './project';
 import CloseButton from './closebutton';
 import '../styles/components/window.scss';
 
-
 class Window extends React.Component {
   constructor(props) {
     super(props);

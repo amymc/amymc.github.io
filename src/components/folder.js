@@ -15,4 +15,3 @@ const Folder = (props) => {
 }
 
 export default Folder;
-

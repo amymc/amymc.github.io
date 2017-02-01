@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import * as ProjectActions from '../actions';
 import StartBar from './startbar';
@@ -10,7 +9,6 @@ import Window from './window';
 import '../styles/components/app.scss';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {

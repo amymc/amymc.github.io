@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Draggable, {DraggableCore} from 'react-draggable';
 import CloseButton from './closebutton';
 import '../styles/components/project.scss';
 

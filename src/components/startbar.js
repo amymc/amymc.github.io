@@ -4,7 +4,6 @@ import TitleBar from './titlebar';
 import '../styles/components/startbar.scss';
 
 class StartBar extends React.Component {
-
   constructor(props) {
     super(props);
 

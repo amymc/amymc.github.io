@@ -3,7 +3,6 @@ import Menu from './menu';
 import '../styles/components/menuitem.scss';
 
 class MenuItem extends React.Component {
-
   constructor(props) {
     super(props);
 

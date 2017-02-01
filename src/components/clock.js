@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/components/clock.scss';
 
 class Clock extends React.Component {
-
   constructor(props) {
     super(props);
 
