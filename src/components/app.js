@@ -1,64 +1,87 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import * as ProjectActions from '../actions';
+import StartBar from './startbar';
+import Folder from './folder';
+import Menu from './menu';
+import Window from './window';
+import '../styles/components/app.scss';
 
-const propTypes = {
-  children: PropTypes.element.isRequired,
-  routes: PropTypes.array.isRequired,
-};
+class App extends React.Component {
 
-function App({ children, routes }) {
-  function generateMapMenu() {
-    let path = '';
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedWindow: null,
+      showMenu: false,
+      startButtonActive: false
+    };
 
-    function nextPath(route) {
-      path += (
-        (path.slice(-1) === '/' ? '' : '/') +
-        (route.path === '/' ? '' : route.path)
-      );
-      return path;
-    }
-
-    return (
-      routes.filter(route => route.mapMenuTitle)
-        .map((route, index, array) => (
-          <span key={index}>
-            <Link to={nextPath(route)}>{route.mapMenuTitle}</Link>
-            {(index + 1) < array.length && ' / '}
-          </span>
-        ))
-    );
+    this.handleMouseDown = this.handleMouseDown.bind(this);
+    this.handleStartClick = this.handleStartClick.bind(this);
   }
 
+  handleMouseDown(windowTitle) {
+    this.setState({
+      selectedWindow: windowTitle
+    });
+  }
 
-  return (
-    <div>
-      <nav>
-        {generateMapMenu()}
-      </nav>
-      {children}
-    </div>
-  );
+  handleStartClick() {
+    // toggle states on button click
+    this.setState({
+      showMenu: !this.state.showMenu,
+      startButtonActive: !this.state.startButtonActive
+    });
+  }
+
+  render() {
+    const { actions, menuItems, popups, projects } = this.props;
+    const openPopups = popups.filter(popup => popup.isOpen === true);
+    const openProjects = projects.filter(project => project.isOpen === true);
+
+    return (
+      <div className='app'>
+        {projects.map((project, index) => {
+          return <Folder key={index} project={project} onClick={actions.openProject}/>
+        })}
+        <div className='app__inner-wrapper'>
+          {openProjects.map((project, index) => {
+            const zIndex = project.title === this.state.selectedWindow ?
+              10 : 1;
+            return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject}/>
+          })}
+          {openPopups.map((popup, index) => {
+             const zIndex = popup.title === this.state.selectedWindow ?
+              10 : 1;
+            return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup}/>
+          })}
+        </div>
+        {this.state.showMenu ?
+          <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick}/> :
+          null
+        }
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
+      </div>
+    );
+  }
 }
 
-App.propTypes = propTypes;
+const mapStateToProps = state => ({
+  menuItems: state.menuItems,
+  popups: state.popups,
+  projects: state.projects,
+  sideProjects: state.sideProjects
+});
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ProjectActions, dispatch)
+});
 
-// const mapStateToProps = state => ({
-//   menuItems: state.menuItems.items,
-//   openProjects: state.openProjects,
-//   projects: state.projects
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   actions: bindActionCreators(ProjectActions, dispatch)
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
 
