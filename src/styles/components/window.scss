@@ -7,6 +7,10 @@ $topOffset: 35px;
 $leftOffset: 35px;
 
 @for $i from 1 through $total {
+  .window--popup:nth-child(#{$i}) {
+    top: $topOffset;
+  }
+
   .window:nth-child(#{$i}) {
     @media (min-width: 540px) {
       top: $topOffset;
@@ -22,10 +26,9 @@ $leftOffset: 35px;
   position: absolute;
   background-color: $submarine-grey;
   padding: 2px;
-  width: 80%;
+  width: 100%;
 
   &--project {
-    width: 100%;
     height: calc(100% - 30px);
     top: 0;
     left: 0;
@@ -44,7 +47,7 @@ $leftOffset: 35px;
   &__title {
     display: block;
     background-color: $navy-blue;
-    color: white;
+    color: $white;
     padding: 0 2px;
     letter-spacing: 0.5px;
     line-height: 20px;
