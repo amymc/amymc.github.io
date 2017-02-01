@@ -8,8 +8,10 @@ $leftOffset: 35px;
 
 @for $i from 1 through $total {
   .window:nth-child(#{$i}) {
-    top: $topOffset;
-    left: $leftOffset;
+    @media (min-width: 540px) {
+      top: $topOffset;
+      left: $leftOffset;
+    }
   }
   $topOffset: $topOffset + 25px;
   $leftOffset: $leftOffset + 10px;
@@ -22,13 +24,17 @@ $leftOffset: 35px;
   padding: 2px;
   width: 80%;
 
-  @media (min-width: 540px) {
-    width: 450px;
+  &--project {
+    width: 100%;
+    height: calc(100% - 30px);
+    top: 0;
+    left: 0;
   }
 
-  // &--selected {
-  //   z-index: 1000;
-  // }
+  @media (min-width: 540px) {
+    width: 450px;
+    height: auto;
+  }
 
   &__header {
     position: relative;
