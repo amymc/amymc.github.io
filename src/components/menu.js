@@ -34,7 +34,7 @@ class Menu extends React.Component {
     const { items } = this.props;
 
     return (
-      <ul className={'menu' + (this.props.type ? ' menu--submenu' : '')} ref={(menu) => { this.menu = menu;}}>
+      <ul className={'menu' + (this.props.type ? ' menu--submenu' : '')} style={{zIndex: 10}} ref={(menu) => { this.menu = menu;}}>
 
         {items.map((item, index) => {
           return <MenuItem key={index} item={item} onClick={this.props.onClick}/>

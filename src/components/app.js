@@ -30,7 +30,6 @@ class App extends React.Component {
   }
 
   handleStartClick() {
-    console.log('start click', this.state.showMenu);
     // toggle states on button click
     this.setState({
       showMenu: !this.state.showMenu,
