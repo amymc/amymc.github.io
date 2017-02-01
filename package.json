@@ -9,12 +9,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rafrex/spa-github-pages.git"
-  },
-  "author": "Rafael Pedicini <code@rafrex.com>",
-  "license": "MIT",
   "dependencies": {
     "core-js": "^2.4.1",
     "react": "^15.1.0",
