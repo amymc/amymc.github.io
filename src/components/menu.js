@@ -23,7 +23,9 @@ class Menu extends React.Component {
   }
 
   onPageClick(e) {
-    if (e.target !== this.menu && !this.menu.contains(e.target)) {
+    const isStartButton = (e.target.className.indexOf('startbar__button') > -1 ||
+      e.target.parentNode.className.indexOf('startbar__button') > -1 );
+    if (e.target !== this.menu && !this.menu.contains(e.target) && !isStartButton) {
       this.props.onPageClick();
     }
   }

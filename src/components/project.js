@@ -5,7 +5,7 @@ import CloseButton from './closebutton';
 import '../styles/components/project.scss';
 
 const Project = (props) => {
-  const item = this.props;
+  const item = props;
 
   return (
     <div className='project'>

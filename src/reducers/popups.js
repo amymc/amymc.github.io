@@ -1,7 +1,6 @@
 import * as types from '../constants/actiontypes';
 
 function popups(state = [], action) {
-  console.log('popups state', state, 'action', action);
   switch (action.type) {
 
     case types.OPEN_POPUP:
