@@ -9,14 +9,14 @@
   cursor: pointer;
 
   &__icon {
-  @include border($santas-grey, $thatch-green);
-  position: relative;
-  display: block;
-  background-color: $folder-yellow;
-  width: 50px;
-  height: 35px;
-  margin: 0 auto;
-  border-radius: 3px;
+    @include border($santas-grey, $thatch-green);
+    position: relative;
+    display: block;
+    background-color: $folder-yellow;
+    width: 50px;
+    height: 35px;
+    margin: 0 auto;
+    border-radius: 3px;
 
     &::before {
       content: '';
@@ -35,9 +35,10 @@
     display: inline-block;
     margin: 5px 0;
     color: white;
-    font-family: "px_sans_nouveaux", Arial, sans-serif;
-    font-size: 0.9rem;
+    //font-family: "px_sans_nouveaux", Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
-   // font-family: arial;
+    //font-family: helvetica, arial, sans-serif;
   }
 }

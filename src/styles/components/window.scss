@@ -27,6 +27,7 @@ $leftOffset: 35px;
   background-color: $submarine-grey;
   padding: 2px;
   width: 100%;
+  border: 2px solid #000;
 
   &--project {
     height: calc(100% - 30px);
@@ -52,5 +53,7 @@ $leftOffset: 35px;
     letter-spacing: 0.5px;
     line-height: 20px;
     height: 18px;
+    border: 2px solid #000;
+    font-weight: 700;
   }
 }

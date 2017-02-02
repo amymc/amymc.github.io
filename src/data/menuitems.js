@@ -38,13 +38,7 @@ const menuItems = [
         isSubmenu: true,
         popup:
           {
-            title: "Error",
-            image_url: "error-icon.png",
-            message:  [
-                        "Control panel not found.",
-                        "Nevermind. Control is an illusion."
-                      ],
-            button_text: "Cancel"
+            title: "Error"
           },
         items: null
       }
@@ -59,12 +53,7 @@ const menuItems = [
     isSubmenu: false,
     popup:
       {
-        title: "Warning",
-        image_url: "warning-icon.png",
-        message: [
-                    "You can't run forever"
-                  ],
-        button_text: "Abort"
+        title: "Warning"
       },
     items: null
   }
