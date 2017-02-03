@@ -1,5 +1,5 @@
 @import '../base/colours';
-@import '../base/borders';
+//@import '../base/borders';
 
 .folder {
   display: inline-block;
@@ -9,7 +9,6 @@
   cursor: pointer;
 
   &__icon {
-    @include border($santas-grey, $thatch-green);
     position: relative;
     display: block;
     background-color: $folder-yellow;
@@ -17,17 +16,30 @@
     height: 35px;
     margin: 0 auto;
     border-radius: 3px;
+    border: 2px solid #000;
 
     &::before {
       content: '';
       position: absolute;
-      top: -6px;
-      left: 0;
+      top: -9px;
+      left: 0px;
       right: 0;
       width: 28%;
-      border-bottom: 5px solid $folder-yellow;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
+      border-bottom: 9px solid #000;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 4px;
+      right: 0;
+      width: 28%;
+      border-bottom: 5px solid  $folder-yellow;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
     }
   }
 
@@ -35,10 +47,8 @@
     display: inline-block;
     margin: 5px 0;
     color: white;
-    //font-family: "px_sans_nouveaux", Arial, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    //font-family: helvetica, arial, sans-serif;
   }
 }
