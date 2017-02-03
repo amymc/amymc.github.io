@@ -9,7 +9,10 @@
   background-color: $submarine-grey;
   min-width: 180px;
   border: 2px solid #000;
- // border-bottom: none;
+
+  &--main {
+    border-bottom: none;
+  }
 
   &--submenu {
     left: 165px;

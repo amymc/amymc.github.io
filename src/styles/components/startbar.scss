@@ -1,6 +1,5 @@
 @import '../base/buttons';
 @import '../base/colours';
-@import '../base/typography';
 
 .startbar {
   position: fixed;
@@ -10,18 +9,15 @@
   left: 0;
   right: 0;
   background-color: $submarine-grey;
- // font-family: "px_sans_nouveaux", Arial, sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
   height: 30px;
   padding: 2px;
   border-top: 2px solid #000;
- // border-bottom: 2px solid #000;
 
   &__button {
     @extend %button;
     height: 25px;
     padding: 0 2px;
-   // font-family: "px_sans_nouveaux", Arial, sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 14px;
