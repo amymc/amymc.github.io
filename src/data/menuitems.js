@@ -11,11 +11,13 @@ const menuItems = [
       {
         title: "Random shit",
         image_url: "random-icon.png",
-        onClick: false,
+        onClick: true,
         onMouseOut: false,
         onMouseOver: false,
         isSubmenu: true,
-        popup: null,
+        popup: {
+            title: "Random shit"
+          },
         items: null
       }
     ]

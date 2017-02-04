@@ -20,7 +20,7 @@ class Menu extends React.Component {
   onPageClick(e) {
     const isStartButton = (e.target.className.indexOf('startbar__button') > -1 ||
       e.target.parentNode.className.indexOf('startbar__button') > -1 );
-    if (e.target !== this.menu && !this.menu.contains(e.target) && !isStartButton) {
+    if (e.target !== this.menu && !this.menu.contains(e.target) && !isStartButton && this.props.onPageClick) {
       this.props.onPageClick();
     }
   }
@@ -32,7 +32,7 @@ class Menu extends React.Component {
       <ul className={'menu' + (this.props.type ? ' menu--submenu' : ' menu--main')} style={{zIndex: 10}} ref={(menu) => { this.menu = menu;}}>
 
         {items.map((item, index) => {
-          return <MenuItem key={index} item={item} onClick={this.props.onClick}/>
+          return <MenuItem key={index} item={item} onClick={this.props.onClick} />
         })}
         
       </ul>

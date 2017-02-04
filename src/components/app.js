@@ -14,10 +14,12 @@ class App extends React.Component {
     this.state = {
       selectedWindow: null,
       showMenu: false,
+     // showSideprojects: false,
       startButtonActive: false
     };
 
     this.handleMouseDown = this.handleMouseDown.bind(this);
+    //this.handleSideProjectsClick = this.handleSideProjectsClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
   }
 
@@ -26,6 +28,14 @@ class App extends React.Component {
       selectedWindow: windowTitle
     });
   }
+
+  // handleSideProjectsClick() {
+  //   console.log('click');
+  //   // toggle states on button click
+  //   this.setState({
+  //     showSideProjects: !this.state.showSideProjects
+  //   });
+  // }
 
   handleStartClick() {
     // toggle states on button click
@@ -39,6 +49,7 @@ class App extends React.Component {
     const { actions, menuItems, popups, projects } = this.props;
     const openPopups = popups.filter(popup => popup.isOpen === true);
     const openProjects = projects.filter(project => project.isOpen === true);
+    console.log('openPopups', openPopups);
 
     return (
       <div className='app'>
@@ -58,7 +69,7 @@ class App extends React.Component {
           })}
         </div>
         {this.state.showMenu ?
-          <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick}/> :
+          <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick} /> :
           null
         }
         <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>

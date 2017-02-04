@@ -17,6 +17,14 @@ const popups = [
     ],
     button_text: "Cancel",
     isOpen: false
+  },
+  {
+    title: "Random shit",
+    image_url: "error-icon.png",
+    message: null,
+    button_text: null,
+    isOpen: false,
+    isSideProjects: true
   }
 ];
 

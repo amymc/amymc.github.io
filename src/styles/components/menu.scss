@@ -2,7 +2,7 @@
 @import '../base/borders';
 
 .menu {
-  @include border($santas-grey, $thatch-green);
+  //@include border($santas-grey, $thatch-green);
   position: absolute;
   left: 0;
   bottom: 30px;
