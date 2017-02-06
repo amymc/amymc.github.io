@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import CloseButton from './closebutton';
 import '../styles/components/popup.scss';
 
@@ -15,8 +16,21 @@ class Popup extends React.Component {
   }
 
   renderSideProjects() {
-
+    return(
+      
+        this.props.sideProjects.map((sideProject, index) => {
+         // console.log('sideProject', sideProject.title);
+          return (
+            <div key={index}>
+              <img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
+              <h1>{sideProject.title}</h1>
+            </div>
+          );
+        })
+    );
   }
+
+  //<img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
 
   renderStandardPopup() {
     return (
@@ -50,4 +64,11 @@ class Popup extends React.Component {
   }
 }
 
-export default Popup;
+const mapStateToProps = state => ({
+  sideProjects: state.sideProjects
+});
+
+export default connect(
+  mapStateToProps, 
+  null
+)(Popup);

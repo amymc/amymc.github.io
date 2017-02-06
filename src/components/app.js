@@ -49,7 +49,6 @@ class App extends React.Component {
     const { actions, menuItems, popups, projects } = this.props;
     const openPopups = popups.filter(popup => popup.isOpen === true);
     const openProjects = projects.filter(project => project.isOpen === true);
-    console.log('openPopups', openPopups);
 
     return (
       <div className='app'>
