@@ -7,17 +7,12 @@ class Popup extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   hover: false
-    // };
-
     this.renderSideProjects = this.renderSideProjects.bind(this);
     this.renderStandardPopup = this.renderStandardPopup.bind(this);
   }
 
   renderSideProjects() {
     return(
-
       <ul className='popup__projects-wrapper'>
         {this.props.sideProjects.map((project, index) => {
           return (
@@ -30,23 +25,10 @@ class Popup extends React.Component {
               </a>
             </li>
           );
-        })
-      }
+        })}
       </ul>
-      
-        // this.props.sideProjects.map((sideProject, index) => {
-        //  // console.log('sideProject', sideProject.title);
-        //   return (
-        //     <div key={index}>
-        //       <img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
-        //       <h1>{sideProject.title}</h1>
-        //     </div>
-        //   );
-        // })
     );
   }
-
-  //<img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
 
   renderStandardPopup() {
     return (
@@ -70,7 +52,7 @@ class Popup extends React.Component {
 
   render() {
     return (
-      <div className='popup__outer-wrapper'>
+      <div className={'popup__outer-wrapper' + (this.props.isSideProjects ? ' popup__outer-wrapper--projects' : '')} >
         {this.props.isSideProjects ?
           this.renderSideProjects() :
           this.renderStandardPopup()

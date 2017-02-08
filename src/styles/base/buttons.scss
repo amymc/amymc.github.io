@@ -2,7 +2,8 @@
 @import './borders';
 
 %button {
-  @include border($santas-grey, $thatch-green);
+  //@include border($santas-grey, $thatch-green);
+  border: 2px solid $black;
   background-color: $submarine-grey;
 
   &:hover,

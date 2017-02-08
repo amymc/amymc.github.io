@@ -20,7 +20,11 @@
 
   &__outer-wrapper {
     display: block;
-    //margin: 15px;
+    margin: 15px;
+
+    &--projects {
+      margin: 0;
+    }
   }
 
   &__inner-wrapper {
@@ -39,8 +43,13 @@
 
   &__button {
     @extend %button;
-    padding: 0 2px;
+    padding: 2px 8px;
     margin-top: 15px;
+    font-size: 1.2rem;
+  }
+
+  &__text {
+    line-height: 1.8rem;
   }
 
   &__projects-wrapper {
