@@ -13,9 +13,10 @@ html {
 body {
   height: 100%;
   background-color: $aquamarine;
-  //font-family: 'roboto', arial, sans-serif;
- // font-weight: bold;
-
-  //font-family: 'Inconsolata', monospace;
   font-family: 'Overpass', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

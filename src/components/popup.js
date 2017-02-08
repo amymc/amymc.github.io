@@ -17,16 +17,32 @@ class Popup extends React.Component {
 
   renderSideProjects() {
     return(
-      
-        this.props.sideProjects.map((sideProject, index) => {
-         // console.log('sideProject', sideProject.title);
+
+      <ul className='popup__projects-wrapper'>
+        {this.props.sideProjects.map((project, index) => {
           return (
-            <div key={index}>
-              <img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
-              <h1>{sideProject.title}</h1>
-            </div>
+            <li className='popup__project' key={index}>
+              <a href={project.url} href={`http://www.amymccarthy.co/${project.url}/`} target='_blank'>
+                <figure className='popup__project-icon-wrapper'>
+                  <img className='popup__project-icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
+                </figure>
+                <h1 className='popup__project-title'>{project.title}</h1>
+              </a>
+            </li>
           );
         })
+      }
+      </ul>
+      
+        // this.props.sideProjects.map((sideProject, index) => {
+        //  // console.log('sideProject', sideProject.title);
+        //   return (
+        //     <div key={index}>
+        //       <img className='popup__icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
+        //       <h1>{sideProject.title}</h1>
+        //     </div>
+        //   );
+        // })
     );
   }
 
