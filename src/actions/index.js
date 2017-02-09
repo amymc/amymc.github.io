@@ -1,7 +1,6 @@
 import * as types from '../constants/actiontypes';
 
 export function openPopup(title) {
-  console.log('title', title);
   return {
     type: types.OPEN_POPUP,
     title

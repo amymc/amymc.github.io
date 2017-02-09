@@ -38,8 +38,7 @@ const menuItems = [
         onMouseOut: false,
         onMouseOver: false,
         isSubmenu: true,
-        popup:
-          {
+        popup: {
             title: "Error"
           },
         items: null
@@ -65,8 +64,7 @@ const menuItems = [
     onMouseOut: false,
     onMouseOver: false,
     isSubmenu: false,
-    popup:
-      {
+    popup: {
         title: "Warning"
       },
     items: null
