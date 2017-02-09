@@ -16,6 +16,11 @@
 
   &__icon {
     vertical-align: top;
+
+    &--contact {
+      width: 100px;
+      border: 2px solid $black;
+    }
   }
 
   &__outer-wrapper {
@@ -36,7 +41,7 @@
     position: relative;
     display: block;
     background-color: $navy-blue;
-    color: white;
+    color: $white;
     padding: 0 2px;
     letter-spacing: 0.5px;
   }

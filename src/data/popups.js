@@ -20,11 +20,19 @@ const popups = [
   },
   {
     title: "Random shit",
-    image_url: "error-icon.png",
+    image_url: null,
     message: null,
     button_text: null,
     isOpen: false,
     isSideProjects: true
+  },
+  {
+    title: "Contact",
+    image_url: "profile-pic.png",
+    message: 'test',
+    button_text: null,
+    isOpen: false,
+    isContact: true
   }
 ];
 

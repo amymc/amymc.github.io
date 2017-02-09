@@ -33,7 +33,7 @@ class Popup extends React.Component {
   renderStandardPopup() {
     return (
       <div>
-        <img className='popup__icon' src={`assets/os-icons/${this.props.image_url}`} alt={this.props.title} />
+        <img className={'popup__icon' + (this.props.isContact ? ' popup__icon--contact' : '')} src={`assets/os-icons/${this.props.image_url}`} alt={this.props.title} />
         <div className='popup__inner-wrapper'>
           <div className='popup__text'>
             <p>{this.props.message[0]}</p>

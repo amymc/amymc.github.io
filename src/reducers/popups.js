@@ -17,8 +17,8 @@ function popups(state = [], action) {
           popup
       )
 
-      default:
-        return state;
+    default:
+      return state;
     }
 }
 

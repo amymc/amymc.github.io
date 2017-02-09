@@ -47,6 +47,18 @@ const menuItems = [
     ]
   },
   {
+    title: "Contact",
+    image_url: "contact-icon.png",
+    onClick: true,
+    onMouseOut: false,
+    onMouseOver: false,
+    isSubmenu: false,
+    popup: {
+      title: "Contact"
+    },
+    items: null
+  },
+  {
     title: "Run...",
     image_url: "run-icon.png",
     onClick: true,

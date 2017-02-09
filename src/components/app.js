@@ -14,12 +14,10 @@ class App extends React.Component {
     this.state = {
       selectedWindow: null,
       showMenu: false,
-     // showSideprojects: false,
       startButtonActive: false
     };
 
     this.handleMouseDown = this.handleMouseDown.bind(this);
-    //this.handleSideProjectsClick = this.handleSideProjectsClick.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
   }
 
@@ -28,14 +26,6 @@ class App extends React.Component {
       selectedWindow: windowTitle
     });
   }
-
-  // handleSideProjectsClick() {
-  //   console.log('click');
-  //   // toggle states on button click
-  //   this.setState({
-  //     showSideProjects: !this.state.showSideProjects
-  //   });
-  // }
 
   handleStartClick() {
     // toggle states on button click
