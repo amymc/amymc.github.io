@@ -5,6 +5,7 @@ const popups = [
     message: [
       "You can't run forever"
     ],
+    links: null,
     button_text: "Abort",
     isOpen: false
   },
@@ -15,6 +16,7 @@ const popups = [
       "Control panel not found.",
       "Nevermind. Control is an illusion."
     ],
+    links: null,
     button_text: "Cancel",
     isOpen: false
   },
@@ -22,6 +24,7 @@ const popups = [
     title: "Random shit",
     image_url: null,
     message: null,
+    links: null,
     button_text: null,
     isOpen: false,
     isSideProjects: true
@@ -30,7 +33,20 @@ const popups = [
     title: "Contact",
     image_url: "profile-pic.png",
     message: 'test',
-    button_text: null,
+    links: [
+      {
+        text: 'Github',
+        url: 'http://github.com/amymc'
+      },
+      {
+        text: 'LinkedIn',
+        url: 'http://www.linkedin.com/in/mccarthyamy'
+      },
+      {
+        text: 'Email',
+        url: 'mailto:amy.mccarthy2@mail.dcu.ie?subject=hello amy'
+      }
+    ],
     isOpen: false,
     isContact: true
   }

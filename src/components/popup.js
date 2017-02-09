@@ -7,8 +7,29 @@ class Popup extends React.Component {
   constructor(props) {
     super(props);
 
+    this.renderContact = this.renderContact.bind(this);
     this.renderSideProjects = this.renderSideProjects.bind(this);
     this.renderStandardPopup = this.renderStandardPopup.bind(this);
+  }
+
+  renderContact() {
+    return (
+      <div>
+        <img className='popup__icon popup__icon--contact' src={`assets/os-icons/${this.props.image_url}`} alt={this.props.title} />
+        <div className='popup__inner-wrapper popup__inner-wrapper--contact'>
+          <div className='popup__text'>
+            
+          </div>
+          {this.props.links.map((link, index) => {
+            return (
+              <a key={index} className='popup__link' href={link.url}>
+                {link.text}
+              </a>
+            )
+          })}
+        </div>
+      </div>
+    );
   }
 
   renderSideProjects() {
@@ -52,10 +73,18 @@ class Popup extends React.Component {
 
   render() {
     return (
-      <div className={'popup__outer-wrapper' + (this.props.isSideProjects ? ' popup__outer-wrapper--projects' : '')} >
+      <div className={'popup__outer-wrapper' + (this.props.isSideProjects ? ' popup__outer-wrapper--projects' : '') + (this.props.isContact ? ' popup__outer-wrapper--contact' : '')} >
+        {this.props.isContact ?
+          this.renderContact() :
+          null
+        }
         {this.props.isSideProjects ?
           this.renderSideProjects() :
-          this.renderStandardPopup()
+          null
+        }
+        {!this.props.isSideProjects && !this.props.isContact ?
+          this.renderStandardPopup() :
+          null
         }
       </div>
     );

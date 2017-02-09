@@ -27,6 +27,10 @@
     display: block;
     margin: 15px;
 
+    &--contact {
+      text-align: center;
+    }
+
     &--projects {
       margin: 0;
     }
@@ -35,6 +39,12 @@
   &__inner-wrapper {
     display: inline-block;
     margin: 0 20px;
+
+    &--contact {
+      @media (min-width: 540px) {
+        margin-left: 40px;
+      }
+    }
   }
 
   &__header {
@@ -55,6 +65,18 @@
 
   &__text {
     line-height: 1.8rem;
+  }
+
+  &__link {
+    @extend %button;
+    display: inline-block;
+    margin-top: 35px;
+    padding: 5px 5px;
+
+    &:nth-of-type(2) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
   }
 
   &__projects-wrapper {
