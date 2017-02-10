@@ -6,14 +6,14 @@ function projects(state = [], action) {
     case types.OPEN_PROJECT:
       return state.map(project =>
         project.title === action.title ?
-          { ...project, isOpen: true } :
-          project
+          { ...project, isOpen: true, isSelected: true } :
+          { ...project, isSelected: false }
       )
 
     case types.CLOSE_PROJECT:
       return state.map(project =>
         project.title === action.title ?
-          { ...project, isOpen: false } :
+          { ...project, isOpen: false, isSelected: false } :
           project
       )
 

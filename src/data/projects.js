@@ -9,7 +9,8 @@ const projects = [
     description: 'blah blah bbc, bfi etc',
     company_url: 'http://ostmodern.co.uk',
     tech_stack: 'JS, JQuery, RequireJS, SASS',
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   },
   {
     title: 'Dots',
@@ -21,7 +22,8 @@ const projects = [
     description: 'blah blah etc',
     company_url: 'http://dots.co',
     tech_stack: 'Coffeescript, JSON, Bootstrap, SASS',
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   },
   {
     title: 'Bragbet',
@@ -33,7 +35,8 @@ const projects = [
     description: 'blah blah etc',
     company_url: null,
     tech_stack: 'blah blah etc',
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   },
   {
     title: 'GetBulb',
@@ -45,7 +48,8 @@ const projects = [
     description: 'blah blah etc',
     company_url: null,
     tech_stack: 'blah blah etc',
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   }
 ];
 

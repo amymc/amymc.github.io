@@ -21,6 +21,17 @@ class App extends React.Component {
     this.handleStartClick = this.handleStartClick.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps', nextProps);
+
+    const selectedProject = nextProps.projects.filter(project => project.isSelected === true)[0];
+    console.log('selectedProject', selectedProject);
+    this.setState({
+      selectedWindow: selectedProject.title
+    });
+
+  }
+
   handleMouseDown(windowTitle) {
     this.setState({
       selectedWindow: windowTitle

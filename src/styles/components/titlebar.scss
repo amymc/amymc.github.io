@@ -2,10 +2,15 @@
 
 .titlebar {
   @extend %block;
-  margin-left: 3px;
+  //margin-left: 3px;
+  margin: 0 2px;
   width: 130px;
   height: 25px;
   border: 2px solid #000;
+  min-width: 76px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &__icon {
     margin-top: -2px;
