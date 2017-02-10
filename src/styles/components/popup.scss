@@ -1,6 +1,7 @@
 @import '../base/colours';
 @import '../base/borders';
 @import '../base/buttons';
+@import '../base/config';
 
 .popup {
   &__icon {
@@ -30,7 +31,7 @@
     margin: 0 20px;
 
     &--contact {
-      @media (min-width: 540px) {
+      @media (min-width: $md) {
         margin-left: 40px;
       }
     }
@@ -77,8 +78,8 @@
 
   &__project {
     display: inline-block;
-    width: 130px;
-    margin-bottom: 15px;
+    width: 105px;
+    margin: 0 10px 15px;
     text-align: center;
   }
 

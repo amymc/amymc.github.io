@@ -21,12 +21,24 @@ class App extends React.Component {
     this.handleStartClick = this.handleStartClick.bind(this);
   }
 
+  // make sure the window just opened has the top z-index.
   componentWillReceiveProps(nextProps) {
     const selectedProject = nextProps.projects.filter(project => project.isSelected === true)[0];
+    const selectedPopup = nextProps.popups.filter(popup => popup.isSelected === true)[0];
+    let selectedTitle;
+
+    if (selectedPopup && (selectedPopup.title !== this.state.selectedWindow) && (this.selectedPopup !== selectedPopup)) {
+      selectedTitle = selectedPopup.title;
+    } else if (selectedProject && (selectedProject.title !== this.state.selectedWindow)) {
+      selectedTitle = selectedProject.title;
+    }
+
     this.setState({
-      selectedWindow: selectedProject.title
+      selectedWindow: selectedTitle
     });
 
+    this.selectedPopup = selectedPopup;
+    this.selectedProject = selectedProject;
   }
 
   handleMouseDown(windowTitle) {

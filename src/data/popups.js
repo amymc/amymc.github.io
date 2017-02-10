@@ -7,7 +7,8 @@ const popups = [
     ],
     links: null,
     button_text: "Abort",
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   },
   {
     title: "Error",
@@ -18,7 +19,8 @@ const popups = [
     ],
     links: null,
     button_text: "Cancel",
-    isOpen: false
+    isOpen: false,
+    isSelected: false
   },
   {
     title: "Random shit",
@@ -27,6 +29,7 @@ const popups = [
     links: null,
     button_text: null,
     isOpen: false,
+    isSelected: false,
     isSideProjects: true
   },
   {
@@ -48,6 +51,7 @@ const popups = [
       }
     ],
     isOpen: false,
+    isSelected: false,
     isContact: true
   }
 ];

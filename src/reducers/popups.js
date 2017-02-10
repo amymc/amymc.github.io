@@ -6,8 +6,8 @@ function popups(state = [], action) {
     case types.OPEN_POPUP:
       return state.map(popup =>
         popup.title === action.title ?
-          { ...popup, isOpen: true } :
-          popup
+          { ...popup, isOpen: true, isSelected: true } :
+          { ...popup, isSelected: false }
       )
 
     case types.CLOSE_POPUP:
