@@ -30,7 +30,7 @@ class Window extends React.Component {
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
 
     return (
-      <Draggable onMouseDown={() => this.props.onMouseDown(item.title)} bounds="body" handle='.handle' {...dragHandlers}>
+      <Draggable onMouseDown={() => this.props.onMouseDown(item.title)} bounds=".app__inner-wrapper" handle='.handle' {...dragHandlers}>
         <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')}>
           <div className='window__header handle'>
             <h1 className='window__title'>

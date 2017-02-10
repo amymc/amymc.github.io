@@ -9,3 +9,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.app__inner-wrapper {
+  // position: relative;
+  width: 100%;
+  height: calc(100% - 30px);
+}

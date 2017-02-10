@@ -22,10 +22,7 @@ class App extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps);
-
     const selectedProject = nextProps.projects.filter(project => project.isSelected === true)[0];
-    console.log('selectedProject', selectedProject);
     this.setState({
       selectedWindow: selectedProject.title
     });
@@ -53,20 +50,22 @@ class App extends React.Component {
 
     return (
       <div className='app'>
-        {projects.map((project, index) => {
-          return <Folder key={index} project={project} onClick={actions.openProject}/>
-        })}
         <div className='app__inner-wrapper'>
-          {openProjects.map((project, index) => {
-            const zIndex = project.title === this.state.selectedWindow ?
-              10 : 1;
-            return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject}/>
+          {projects.map((project, index) => {
+            return <Folder key={index} project={project} onClick={actions.openProject}/>
           })}
-          {openPopups.map((popup, index) => {
-             const zIndex = popup.title === this.state.selectedWindow ?
-              10 : 1;
-            return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup}/>
-          })}
+          <div>
+            {openProjects.map((project, index) => {
+              const zIndex = project.title === this.state.selectedWindow ?
+                10 : 1;
+              return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject}/>
+            })}
+            {openPopups.map((popup, index) => {
+               const zIndex = popup.title === this.state.selectedWindow ?
+                10 : 1;
+              return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup}/>
+            })}
+          </div>
         </div>
         {this.state.showMenu ?
           <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick} /> :
