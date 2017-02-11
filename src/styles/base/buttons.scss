@@ -1,14 +1,14 @@
-@import './colours';
-@import './borders';
+@import './variables';
 
 %button {
   //@include border($santas-grey, $thatch-green);
-  border: 2px solid $black;
+  border: $border-standard;
   background-color: $submarine-grey;
 
   &:hover,
   &:focus,
   &:active {
-    @include border($thatch-green, $santas-grey);
+    border: $border-active;
+    //@include border($thatch-green, $santas-grey);
   }
 }

@@ -1,18 +1,12 @@
-@import '../base/colours';
-@import '../base/borders';
+@import '../base/variables';
 
 .menu {
-  //@include border($santas-grey, $thatch-green);
   position: absolute;
   left: 0;
   bottom: 30px;
   background-color: $submarine-grey;
   min-width: 180px;
-  border: 2px solid #000;
-
-  &--main {
-    border-bottom: none;
-  }
+  border: $border-standard;
 
   &--submenu {
     left: 165px;

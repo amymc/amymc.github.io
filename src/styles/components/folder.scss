@@ -1,11 +1,10 @@
-@import '../base/colours';
-//@import '../base/borders';
+@import '../base/variables';
 
 .folder {
-  display: inline-block;
   text-align: center;
   width: 60px;
   margin: 10px;
+  padding-top: 10px;
   cursor: pointer;
 
   &__icon {
@@ -16,7 +15,7 @@
     height: 35px;
     margin: 0 auto;
     border-radius: 3px;
-    border: 2px solid #000;
+    border: $border-standard;
 
     &::before {
       content: '';
@@ -25,7 +24,7 @@
       left: 0px;
       right: 0;
       width: 28%;
-      border-bottom: 9px solid #000;
+      border-bottom: 9px solid $black;
       border-left: 9px solid transparent;
       border-right: 9px solid transparent;
     }
@@ -46,7 +45,7 @@
   &__title {
     display: inline-block;
     margin: 5px 0;
-    color: white;
+    color: $white;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.5px;

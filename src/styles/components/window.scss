@@ -1,6 +1,4 @@
-@import '../base/colours';
-@import '../base/borders';
-@import '../base/config';
+@import '../base/variables';
 
 $total: 10;
 $topOffset: 35px;
@@ -22,12 +20,11 @@ $leftOffset: 35px;
 }
 
 .window {
-  @include border($santas-grey, $thatch-green);
   position: absolute;
   background-color: $submarine-grey;
   padding: 2px;
   width: 100%;
-  border: 2px solid #000;
+  border: $border-standard;
 
   &--project {
     height: calc(100% - 30px);
@@ -53,7 +50,7 @@ $leftOffset: 35px;
     letter-spacing: 0.5px;
     line-height: 17px;
     height: 20px;
-    border: 2px solid #000;
+    border: $border-standard;
     font-weight: 700;
   }
 }

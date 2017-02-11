@@ -1,12 +1,11 @@
-@import '../base/colours';
-@import '../base/borders';
+@import '../base/variables';
 
 .project {
   &__inner-wrapper {
     display: block;
     margin: 12px;
     font-family: arial, sans-serif;
-    border-bottom: 1px solid $dusty-grey;
+    border-bottom: 1px solid $boulder-grey;
   }
 
   &__image-wrapper {
@@ -25,7 +24,7 @@
     width: 60%;
   }
 
-  &__button-wrapper {
-    border-top: 1px solid $mercury-grey;
-  }
+  // &__button-wrapper {
+  //   border-top: 1px solid $mercury-grey;
+  // }
 }

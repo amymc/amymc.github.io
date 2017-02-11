@@ -1,7 +1,5 @@
-@import '../base/colours';
-@import '../base/borders';
+@import '../base/variables';
 @import '../base/buttons';
-@import '../base/config';
 
 .popup {
   &__icon {
@@ -9,7 +7,7 @@
 
     &--contact {
       width: 100px;
-      border: 2px solid $black;
+      border: $border-standard;
     }
   }
 
@@ -71,7 +69,7 @@
 
   &__projects-wrapper {
     background-color: $white;
-    border: 2px solid $black;
+    border: $border-standard;
     padding: 10px 0;
     margin-top: 2px;
   }
