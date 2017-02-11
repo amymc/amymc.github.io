@@ -1,7 +1,6 @@
 @import './variables';
 
 %button {
-  //@include border($santas-grey, $thatch-green);
   border: $border-standard;
   background-color: $submarine-grey;
 
@@ -9,6 +8,5 @@
   &:focus,
   &:active {
     border: $border-active;
-    //@include border($thatch-green, $santas-grey);
   }
 }

@@ -1,7 +1,18 @@
 const projects = [
   {
+    title: 'Edenspiekermann',
+    image_urls: [
+      'dots/twodots_screenshot1.png',
+      'dots/dots_mobile_screenshot1.png'
+      ],
+    description: 'blah blah etc',
+    company_url: 'https://www.edenspiekermann.com',
+    tech_stack: 'blah blah etc',
+    isOpen: false,
+    isSelected: false
+  },
+  {
     title: 'Ostmodern',
-    url: 'ostmodern',
     image_urls: [
       'dots/twodots_screenshot1.png',
       'dots/dots_mobile_screenshot1.png'
@@ -14,7 +25,6 @@ const projects = [
   },
   {
     title: 'Dots',
-    project_url: 'dots',
     image_urls: [
       'dots/twodots_screenshot1.png',
       'dots/dots_mobile_screenshot1.png'
@@ -27,7 +37,6 @@ const projects = [
   },
   {
     title: 'Bragbet',
-    project_url: 'bragbet',
     image_urls: [
       'dots/twodots_screenshot1.png',
       'dots/dots_mobile_screenshot1.png'
@@ -40,13 +49,12 @@ const projects = [
   },
   {
     title: 'GetBulb',
-    project_url: 'bragbet',
     image_urls: [
       'dots/twodots_screenshot1.png',
       'dots/dots_mobile_screenshot1.png'
       ],
     description: 'blah blah etc',
-    company_url: null,
+    company_url: 'http://www.getbulb.com/',
     tech_stack: 'blah blah etc',
     isOpen: false,
     isSelected: false
