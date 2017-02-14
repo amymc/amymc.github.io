@@ -38,24 +38,30 @@ const projects = [
   {
     title: 'Bragbet',
     image_urls: [
-      'dots/twodots_screenshot1.png',
-      'dots/dots_mobile_screenshot1.png'
+      'bragbet/bragbet_screenshot1.jpg',
+      'bragbet/bragbet_screenshot2.jpg'
       ],
-    description: 'blah blah etc',
+    type: 'social betting site',
+    description: 'Turned Photoshop mockups into responsive pages',
     company_url: null,
-    tech_stack: 'blah blah etc',
+    tech_stack: 'CSS, jQuery, Foundation framework, Grails',
     isOpen: false,
     isSelected: false
   },
   {
     title: 'GetBulb',
     image_urls: [
-      'dots/twodots_screenshot1.png',
-      'dots/dots_mobile_screenshot1.png'
+      'getbulb/getbulb_screenshot1.jpg',
+      'getbulb/getbulb_screenshot4.jpg'
       ],
-    description: 'blah blah etc',
+    type: 'Data visualisation startup',
+    description: [
+      'Created charts, graphs and maps using D3.js.',
+      'Integrated these new charts into the exisitng app, which runs on the Sproutcore Javscript MVC framework.',
+      'The app allows users to paste in data from a spreadsheet and then the selected chart will update to reflect the data.'
+    ],
     company_url: 'http://www.getbulb.com/',
-    tech_stack: 'blah blah etc',
+    tech_stack: 'D3.js',
     isOpen: false,
     isSelected: false
   }
