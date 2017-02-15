@@ -5,21 +5,23 @@ const projects = [
       'dots/twodots_screenshot1.png',
       'dots/dots_mobile_screenshot1.png'
       ],
+    type: 'Design agency',
     description: 'blah blah etc',
     company_url: 'https://www.edenspiekermann.com',
-    tech_stack: 'blah blah etc',
+    tech_stack: 'React, Redux, SCSS (BEM)',
     isOpen: false,
     isSelected: false
   },
   {
     title: 'Ostmodern',
     image_urls: [
-      'dots/twodots_screenshot1.png',
-      'dots/dots_mobile_screenshot1.png'
+      'ostmodern/bfi_screenshot1.png',
+      'ostmodern/bfi_screenshot2.png'
     ],
-    description: 'blah blah bbc, bfi etc',
+    type: 'Digital agency specialising in streaming video platforms',
+    description: 'Worked on responsive video platforms for BFI, BBC and UTV',
     company_url: 'http://ostmodern.co.uk',
-    tech_stack: 'JS, JQuery, RequireJS, SASS',
+    tech_stack: 'JS, JQuery, SCSS (BEM), Handlebars, Gulp, RequireJS, Django',
     isOpen: false,
     isSelected: false
   },
@@ -27,9 +29,14 @@ const projects = [
     title: 'Dots',
     image_urls: [
       'dots/twodots_screenshot1.png',
-      'dots/dots_mobile_screenshot1.png'
+      'dots/twodots_screenshot2.png',
+      'dots/dots_screenshot1.png'
       ],
-    description: 'blah blah etc',
+    type: 'Games studio',
+    description: [
+      'Ported the iOS game Two Dots to Facebook',
+      'Implemented redesigned company site'
+    ],
     company_url: 'http://dots.co',
     tech_stack: 'Coffeescript, JSON, Bootstrap, SASS',
     isOpen: false,
@@ -41,7 +48,7 @@ const projects = [
       'bragbet/bragbet_screenshot1.jpg',
       'bragbet/bragbet_screenshot2.jpg'
       ],
-    type: 'social betting site',
+    type: 'Social betting startup',
     description: 'Turned Photoshop mockups into responsive pages',
     company_url: null,
     tech_stack: 'CSS, jQuery, Foundation framework, Grails',

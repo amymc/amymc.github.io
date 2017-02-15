@@ -32,6 +32,10 @@ $leftOffset: 35px;
     left: 0;
   }
 
+  &--popup {
+    max-width: 450px;
+  }
+
   @media (min-width: $md) {
   //  width: 540px;
   //  height: auto;
