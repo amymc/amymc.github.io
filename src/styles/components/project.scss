@@ -23,6 +23,11 @@
     height: auto;
     border: $border-standard;
     margin-bottom: 10px;
+
+    &--portrait {
+      display: inline-block;
+      width: 50%;
+    }
   }
 
   &__info-wrapper {

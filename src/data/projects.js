@@ -6,7 +6,9 @@ const projects = [
       'dots/dots_mobile_screenshot1.png'
       ],
     type: 'Design agency',
-    description: 'blah blah etc',
+    description: [
+      'blah blah etc'
+    ],
     company_url: 'https://www.edenspiekermann.com',
     tech_stack: 'React, Redux, SCSS (BEM)',
     isOpen: false,
@@ -19,7 +21,9 @@ const projects = [
       'ostmodern/bfi_screenshot2.png'
     ],
     type: 'Digital agency specialising in streaming video platforms',
-    description: 'Worked on responsive video platforms for BFI, BBC and UTV',
+    description: [
+      'Worked on responsive video platforms for BFI, BBC and UTV'
+    ],
     company_url: 'http://ostmodern.co.uk',
     tech_stack: 'JS, JQuery, SCSS (BEM), Handlebars, Gulp, RequireJS, Django',
     isOpen: false,
@@ -32,6 +36,7 @@ const projects = [
       'dots/twodots_screenshot2.png',
       'dots/dots_screenshot1.png'
       ],
+    hasPortraitImages: true,
     type: 'Games studio',
     description: [
       'Ported the iOS game Two Dots to Facebook',
@@ -49,7 +54,9 @@ const projects = [
       'bragbet/bragbet_screenshot2.jpg'
       ],
     type: 'Social betting startup',
-    description: 'Turned Photoshop mockups into responsive pages',
+    description: [
+      'Turned Photoshop mockups into responsive pages'
+    ],
     company_url: null,
     tech_stack: 'CSS, jQuery, Foundation framework, Grails',
     isOpen: false,
