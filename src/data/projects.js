@@ -1,20 +1,5 @@
 const projects = [
   {
-    title: 'Edenspiekermann',
-    image_urls: [
-      'dots/twodots_screenshot1.png',
-      'dots/dots_mobile_screenshot1.png'
-      ],
-    type: 'Design agency',
-    description: [
-      'blah blah etc'
-    ],
-    company_url: 'https://www.edenspiekermann.com',
-    tech_stack: 'React, Redux, SCSS (BEM)',
-    isOpen: false,
-    isSelected: false
-  },
-  {
     title: 'Ostmodern',
     image_urls: [
       'ostmodern/bfi_screenshot1.png',
@@ -48,6 +33,20 @@ const projects = [
     isSelected: false
   },
   {
+    title: 'Edenspiekermann',
+    image_urls: [
+      'espi/mywings.png'
+      ],
+    type: 'Design agency',
+    description: [
+      'blah blah etc'
+    ],
+    company_url: 'https://www.edenspiekermann.com',
+    tech_stack: 'React, Redux, SCSS (BEM)',
+    isOpen: false,
+    isSelected: false
+  },
+  {
     title: 'Bragbet',
     image_urls: [
       'bragbet/bragbet_screenshot1.jpg',
@@ -66,7 +65,7 @@ const projects = [
     title: 'GetBulb',
     image_urls: [
       'getbulb/getbulb_screenshot1.jpg',
-      'getbulb/getbulb_screenshot4.jpg'
+      'getbulb/getbulb_screenshot2.jpg'
       ],
     type: 'Data visualisation startup',
     description: [
