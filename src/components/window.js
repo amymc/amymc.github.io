@@ -12,18 +12,65 @@ class Window extends React.Component {
 
     this.state ={
       activeDrags: 0,
+      availableWidth: 1000,
+      availableHeight: 1000,
       width: 540,
       height: 420
     };
 
+    this.onDrag = this.onDrag.bind(this);
     this.onResize = this.onResize.bind(this);
     this.onStart = this.onStart.bind(this);
     this.onStop = this.onStop.bind(this);
     this.renderFixedSize = this.renderFixedSize.bind(this);
     this.renderResizable = this.renderResizable.bind(this);
+    this.setAvailableSpace = this.setAvailableSpace.bind(this);
+    this.updateWindowWidth = this.updateWindowWidth.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowWidth();
+    window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowWidth);
+  }
+
+  updateWindowWidth() {
+    if (window.innerWidth > 540) {
+      this.setState({ isDesktop: true });
+    } else {
+      this.setState({ isDesktop: false });
+    }
+
+    if (this.openWindow) {
+      this.setAvailableSpace('resize');
+    } 
+  }
+
+  setAvailableSpace(eventType) {
+    //set max width constraint to be windowwidth - left offset position of window
+    const availableWidth = window.innerWidth - this.openWindow.getBoundingClientRect().left;
+    const availableHeight = window.innerHeight - this.openWindow.getBoundingClientRect().top - 30;
+   
+    this.setState({
+      availableWidth: availableWidth,
+      availableHeight: availableHeight
+    });
+
+    if (eventType !== 'drag' && availableWidth < this.state.width) {
+      this.setState({width: availableWidth});
+    }
+  }
+
+  onDrag() {
+    console.log('drag');
+    this.setAvailableSpace('drag');
   }
 
   onResize(event, {size}){
+    this.updateWindowWidth();
     this.setState({width: size.width, height: size.height});
   }
 
@@ -38,9 +85,12 @@ class Window extends React.Component {
   renderFixedSize() {
     const { item, zIndex } = this.props;
     return (
-      <div style={{zIndex: zIndex}} className='window window--popup'>
+      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')}>
         <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
-        <Popup {...item} onClick={() => this.props.onCloseClick(item.title)} />
+        {this.props.isProject ?
+            <Project {...item} /> :
+            <Popup {...item} onClick={() => this.props.onCloseClick(item.title)} />
+          }
       </div>
     );
   }
@@ -48,8 +98,8 @@ class Window extends React.Component {
   renderResizable() {
     const { item, zIndex } = this.props;
     return (
-      <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} onResize={this.onResize}>
-        <div style={{zIndex: zIndex, width: this.state.width + 'px'}} className='window window--project'>
+      <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} maxConstraints={[this.state.availableWidth, this.state.availableHeight]} onResize={this.onResize}>
+        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
           <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
           <Project {...item} />
         </div>
@@ -58,11 +108,10 @@ class Window extends React.Component {
   }
 
   render() {
-    const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
-
+    const dragHandlers = {onDrag: this.onDrag, onStart: this.onStart, onStop: this.onStop};
     return (
       <Draggable onMouseDown={() => this.props.onMouseDown(this.props.item.title)} bounds=".app__inner-wrapper" handle='.handle' {...dragHandlers}>
-        {this.props.isProject ?
+        {this.props.isProject && this.state.isDesktop ?
           this.renderResizable() :
           this.renderFixedSize()
         }

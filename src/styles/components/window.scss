@@ -29,6 +29,7 @@ $leftOffset: 35px;
   &--project {
     top: 0;
     left: 0;
+    height: calc(100% - 30px);
   }
 
   &--popup {
@@ -36,25 +37,9 @@ $leftOffset: 35px;
   }
 
   @media (min-width: $md) {
-  //  width: 540px;
-  //  height: auto;
-  }
-
-  &__header {
-    position: relative;
-    display: block;
-  }
-
-  &__title {
-    display: block;
-    background-color: $navy-blue;
-    color: $white;
-    padding: 0 2px;
-    letter-spacing: 0.5px;
-    line-height: 17px;
-    height: 20px;
-    border: $border-standard;
-    font-weight: 700;
+    width: 540px;
+    height: auto;
+    max-height: calc(100% - 30px);
   }
 }
 

@@ -47,6 +47,7 @@ class Project extends React.Component {
             {item.description.map((description, index) => {
               return <p key={index}>{description}</p>
             })}
+            {item.tech_stack}
             <a className='project__link' href={item.company_url} target='_blank'>
               Company site
             </a>
