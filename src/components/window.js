@@ -65,7 +65,6 @@ class Window extends React.Component {
   }
 
   onDrag() {
-    console.log('drag');
     this.setAvailableSpace('drag');
   }
 
@@ -82,10 +81,24 @@ class Window extends React.Component {
     this.setState({activeDrags: --this.state.activeDrags});
   }
 
+  renderDraggable() {
+    const { item } = this.props;
+    const dragHandlers = {onDrag: this.onDrag, onStart: this.onStart, onStop: this.onStop};
+
+    return (
+      <Draggable onMouseDown={() => this.props.onMouseDown(this.props.item.title)} bounds=".app__inner-wrapper" handle='.handle' {...dragHandlers}>
+        {this.props.isProject ?
+          this.renderResizable() :
+          this.renderFixedSize()
+        }
+      </Draggable>
+    );
+  }
+
   renderFixedSize() {
     const { item, zIndex } = this.props;
     return (
-      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')}>
+      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')} ref={(window) => { this.openWindow = window;}}>
         <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
         {this.props.isProject ?
             <Project {...item} /> :
@@ -99,7 +112,7 @@ class Window extends React.Component {
     const { item, zIndex } = this.props;
     return (
       <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} maxConstraints={[this.state.availableWidth, this.state.availableHeight]} onResize={this.onResize}>
-        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
+        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'minWidth': 500 + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
           <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
           <Project {...item} />
         </div>
@@ -108,14 +121,13 @@ class Window extends React.Component {
   }
 
   render() {
-    const dragHandlers = {onDrag: this.onDrag, onStart: this.onStart, onStop: this.onStop};
     return (
-      <Draggable onMouseDown={() => this.props.onMouseDown(this.props.item.title)} bounds=".app__inner-wrapper" handle='.handle' {...dragHandlers}>
-        {this.props.isProject && this.state.isDesktop ?
-          this.renderResizable() :
+      <div>
+        {this.state.isDesktop ?
+          this.renderDraggable() :
           this.renderFixedSize()
         }
-      </Draggable>
+      </div>
     )
   }
 }
