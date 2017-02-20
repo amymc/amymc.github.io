@@ -112,7 +112,7 @@ class Window extends React.Component {
     const { item, zIndex } = this.props;
     return (
       <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} maxConstraints={[this.state.availableWidth, this.state.availableHeight]} onResize={this.onResize}>
-        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'minWidth': 500 + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
+        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
           <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
           <Project {...item} />
         </div>

@@ -40,12 +40,13 @@ $leftOffset: 35px;
     width: 540px;
     height: auto;
     max-height: calc(100% - 30px);
+
+    &--project {
+      min-width: 500px;
+    }
   }
 }
 
-.react-resizable {
-  //position: relative;
-}
 .react-resizable-handle {
   position: absolute;
   width: 20px;

@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedProject: null,
       selectedWindow: null,
       showMenu: false,
       startButtonActive: false
@@ -34,6 +35,7 @@ class App extends React.Component {
     }
 
     this.setState({
+      selectedProject: selectedProject.title,
       selectedWindow: selectedTitle
     });
 
@@ -83,7 +85,7 @@ class App extends React.Component {
           <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick} /> :
           null
         }
-        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects}/>
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects} selectedProject={this.state.selectedProject}/>
       </div>
     );
   }

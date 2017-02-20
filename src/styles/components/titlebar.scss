@@ -11,6 +11,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: none;
+
+  @media (min-width: $md) {
+    display: inline-block;
+  }
+
+  &--selected {
+    display: inline-block;
+  }
 
   &__icon {
     margin-top: -2px;
