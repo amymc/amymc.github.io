@@ -25,15 +25,25 @@ $leftOffset: 35px;
   padding: 2px;
   width: 100%;
   border: $border-standard;
-
-  &--project {
-    top: 0;
-    left: 0;
-    height: calc(100% - 30px);
-  }
+  overflow: hidden;
 
   &--popup {
     max-width: 450px;
+  }
+
+  &--project {
+    display: none;
+    top: 0;
+    left: 0;
+    height: calc(100% - 30px);
+
+    @media (min-width: $md) {
+      display: block;
+    }
+  }
+
+  &--selected {
+    display: block;
   }
 
   @media (min-width: $md) {

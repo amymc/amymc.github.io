@@ -97,12 +97,14 @@ class Window extends React.Component {
 
   renderFixedSize() {
     const { item, zIndex } = this.props;
+    const isSelectedProject = item.title === this.props.selectedProject ? true : false;
+
     return (
-      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')} ref={(window) => { this.openWindow = window;}}>
+      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup') + (isSelectedProject ? ' window--selected' : '')} ref={(window) => { this.openWindow = window;}}>
         <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
         {this.props.isProject ?
             <Project {...item} /> :
-            <Popup {...item} onClick={() => this.props.onCloseClick(item.title)} />
+            <Popup {...item} onClick={() => this.props.onCloseClick(item.title)} selectedProject={this.props.selectedProject}/>
           }
       </div>
     );
@@ -112,7 +114,7 @@ class Window extends React.Component {
     const { item, zIndex } = this.props;
     return (
       <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} maxConstraints={[this.state.availableWidth, this.state.availableHeight]} onResize={this.onResize}>
-        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
+        <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxWidth': this.state.availableWidth + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
           <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
           <Project {...item} />
         </div>
@@ -122,12 +124,9 @@ class Window extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.isDesktop ?
-          this.renderDraggable() :
-          this.renderFixedSize()
-        }
-      </div>
+      this.state.isDesktop ?
+        this.renderDraggable() :
+        this.renderFixedSize()
     )
   }
 }

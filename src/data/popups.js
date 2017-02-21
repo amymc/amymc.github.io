@@ -23,6 +23,18 @@ const popups = [
     isSelected: false
   },
   {
+    title: "Failure to open",
+    image_url: "error-icon.png",
+    message: [
+      "Link is dead.",
+      "All life is transient."
+    ],
+    links: null,
+    button_text: "OK",
+    isOpen: false,
+    isSelected: false
+  },
+  {
     title: "Random shit",
     image_url: null,
     message: null,

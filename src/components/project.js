@@ -1,4 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as ProjectActions from '../actions';
 import CloseButton from './closebutton';
 import '../styles/components/project.scss';
 
@@ -21,11 +25,11 @@ class Project extends React.Component {
   renderPortraitLayout() {
     return (
       <div>
-      <div className="project__image-inner-wrapper">
-        <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[0]}`} />
-        <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[1]}`} />
-      </div>
-      <img className='project__image' alt={this.props.title} src={`assets/${this.props.image_urls[2]}`} />
+        <div className="project__image-inner-wrapper">
+          <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[0]}`} />
+          <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[1]}`} />
+        </div>
+        <img className='project__image' alt={this.props.title} src={`assets/${this.props.image_urls[2]}`} />
       </div>
     );
   }
@@ -43,14 +47,27 @@ class Project extends React.Component {
             }
           </div>
           <div className='project__info-wrapper'>
-            <p>{item.type}</p>
-            {item.description.map((description, index) => {
-              return <p key={index}>{description}</p>
-            })}
-            {item.tech_stack}
-            <a className='project__link' href={item.company_url} target='_blank'>
-              Company site
-            </a>
+            <p className="project__info">
+              <span className="project__info-title">Type:</span> {item.type}
+            </p>
+            <div className="project__info">
+              <span className="project__info-title project__info-title--has-margin">Description:</span>
+                {item.description.map((description, index) => {
+                  return <p className="project__info-item" key={index}>{description}</p>
+                })}
+              </div>
+            <p className="project__info">
+              <span className="project__info-title">Tech stack:</span> {item.tech_stack}
+            </p>
+            {item.company_url ?
+              <a className='project__link' href={item.company_url} target='_blank'>
+                Company site
+              </a> :
+              <button className='project__link' onClick={() => this.props.actions.openPopup(item.popup.title)}>
+                Company site
+              </button>
+            }
+
           </div>
         </div>
       </div>
@@ -58,4 +75,14 @@ class Project extends React.Component {
   }
 }
 
-export default Project;
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ProjectActions, dispatch)
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Project);
+
+
+//export default Project;

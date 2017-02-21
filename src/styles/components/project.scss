@@ -2,18 +2,24 @@
 @import '../base/buttons';
 
 .project {
+  height: calc(100% - 30px);
+
   &__inner-wrapper {
     display: block;
     margin: 12px;
     font-family: arial, sans-serif;
-  //  border-bottom: 1px solid $boulder-grey;
   }
 
   &__image-wrapper {
-    display: inline-block;
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 15px auto;
 
     @media (min-width: $md) {
+      display: inline-block;
       width: 60%;
+      margin-bottom: 0;
+      max-width: none;
     }
   }
 
@@ -45,12 +51,43 @@
 
   &__info-wrapper {
     display: inline-block;
-    width: 35%;
-    margin-left: 20px;
     vertical-align: top;
+    
+    @media (min-width: $md) {
+      width: 35%;
+      margin-left: 20px;
+    }
+  }
+
+  &__info {
+    margin: 10px 0;
+
+    &:first-child {
+      @media (min-width: $md) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__info-title {
+    display: inline-block;
+    font-weight: bold;
+
+    &--has-margin {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__info-item {
+    margin-bottom: 5px;
+
+    &:first-child {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
     @extend %link-button;
+    font-size: 1.4rem;
   }
 }

@@ -32,10 +32,12 @@ class App extends React.Component {
       selectedTitle = selectedPopup.title;
     } else if (selectedProject && (selectedProject.title !== this.state.selectedWindow)) {
       selectedTitle = selectedProject.title;
+      this.setState({
+        selectedProject: selectedTitle
+      });
     }
 
     this.setState({
-      selectedProject: selectedProject.title,
       selectedWindow: selectedTitle
     });
 
@@ -72,7 +74,7 @@ class App extends React.Component {
             {openProjects.map((project, index) => {
               const zIndex = project.title === this.state.selectedWindow ?
                 10 : 1;
-              return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject}/>
+              return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject} selectedProject={this.state.selectedProject}/>
             })}
             {openPopups.map((popup, index) => {
                const zIndex = popup.title === this.state.selectedWindow ?

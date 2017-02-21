@@ -28,7 +28,7 @@ const projects = [
       'Implemented redesigned company site'
     ],
     company_url: 'http://dots.co',
-    tech_stack: 'Coffeescript, JSON, Bootstrap, SASS',
+    tech_stack: 'Coffeescript, JSON, Bootstrap, SCSS',
     isOpen: false,
     isSelected: false
   },
@@ -39,7 +39,7 @@ const projects = [
       ],
     type: 'Design agency',
     description: [
-      'blah blah etc'
+      'Worked on a React/Redux app for Redbull that consisted of micro campaigns for different regions'
     ],
     company_url: 'https://www.edenspiekermann.com',
     tech_stack: 'React, Redux, SCSS (BEM)',
@@ -56,6 +56,9 @@ const projects = [
     description: [
       'Turned Photoshop mockups into responsive pages'
     ],
+    popup: {
+      title: "Failure to open"
+    },
     company_url: null,
     tech_stack: 'CSS, jQuery, Foundation framework, Grails',
     isOpen: false,
