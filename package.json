@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://amymccarthy.co/two_point_oh",
   "scripts": {
-    "build": "babel src -d __build__",
+    "build": "babel src -d build",
     "start": "webpack -d --watch & live-server --entry-file=index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

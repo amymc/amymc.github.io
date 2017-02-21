@@ -1,8 +1,8 @@
 # Dependency directory
 node_modules
 
-# Build directory
-build
+# Source directory
+src
 
 # misc
 .DS_Store
