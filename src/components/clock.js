@@ -11,7 +11,8 @@ class Clock extends React.Component {
   // http://stackoverflow.com/questions/32880484/react-js-live-clock-update
   setTime(){
     const currentdate = new Date();
-    let hours = currentdate.getUTCHours() - currentdate.getTimezoneOffset();
+    // getTimezoneOffset returns minutes, so divide by 60 to get hours
+    let hours = currentdate.getUTCHours() - (currentdate.getTimezoneOffset()/60);
 
     // correct for number over 24, and negatives
     if( hours >= 24 ){ hours -= 24; }
