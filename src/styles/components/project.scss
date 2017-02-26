@@ -9,6 +9,7 @@
 
   @media (min-width: $md) {
     height: calc(100% - 30px);
+    padding-bottom: 0;
   }
 
   &__inner-wrapper {
