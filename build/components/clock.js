@@ -46,7 +46,7 @@ var Clock = function (_React$Component) {
         hours -= 24;
       }
       if (hours < 0) {
-        hours += 12;
+        hours += 24;
       }
 
       // add leading zero, first convert hours to string
@@ -58,7 +58,7 @@ var Clock = function (_React$Component) {
       // minutes are the same on every time zone
       var minutes = currentdate.getUTCMinutes();
 
-      // add leading zero, first convert hours to string
+      // add leading zero, first convert minutes to string
       minutes = minutes + "";
       if (minutes.length == 1) {
         minutes = "0" + minutes;

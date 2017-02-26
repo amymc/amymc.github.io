@@ -30833,7 +30833,7 @@
 	        hours -= 24;
 	      }
 	      if (hours < 0) {
-	        hours += 12;
+	        hours += 24;
 	      }
 	
 	      // add leading zero, first convert hours to string
@@ -30845,7 +30845,7 @@
 	      // minutes are the same on every time zone
 	      var minutes = currentdate.getUTCMinutes();
 	
-	      // add leading zero, first convert hours to string
+	      // add leading zero, first convert minutes to string
 	      minutes = minutes + "";
 	      if (minutes.length == 1) {
 	        minutes = "0" + minutes;
@@ -31371,7 +31371,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.startbar__button {\n  border: 2px solid #000;\n  background-color: #C0C7C8; }\n  .startbar__button:hover, .startbar__button:focus, .startbar__button:active {\n    border: 2px solid #7A7A7A; }\n\n/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.startbar {\n  position: fixed;\n  display: flex;\n  flex-direction: row;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #C0C7C8;\n  font-size: 1.3rem;\n  height: 30px;\n  padding: 2px;\n  border-top: 2px solid #000; }\n  .startbar__button {\n    height: 25px;\n    padding: 0 2px;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 14px;\n    border: 2px solid #000;\n    min-width: 62px; }\n    .startbar__button--active {\n      border: 2px solid #7A7A7A; }\n  .startbar__button-icon {\n    margin: 3px 0;\n    vertical-align: bottom; }\n  .startbar__button-text {\n    display: inline-block;\n    margin: 4px;\n    vertical-align: top; }\n", ""]);
+	exports.push([module.id, "/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.startbar__button {\n  border: 2px solid #000;\n  background-color: #C0C7C8; }\n  .startbar__button:hover, .startbar__button:focus, .startbar__button:active {\n    border: 2px solid #7A7A7A; }\n\n/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.startbar {\n  position: fixed;\n  display: flex;\n  flex-direction: row;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: #C0C7C8;\n  font-size: 1.3rem;\n  height: 30px;\n  padding: 2px;\n  border-top: 2px solid #000;\n  z-index: 10; }\n  .startbar__button {\n    height: 25px;\n    padding: 0 2px;\n    font-size: 1.2rem;\n    font-weight: bold;\n    line-height: 14px;\n    border: 2px solid #000;\n    min-width: 62px; }\n    .startbar__button--active {\n      border: 2px solid #7A7A7A; }\n  .startbar__button-icon {\n    margin: 3px 0;\n    vertical-align: bottom; }\n  .startbar__button-text {\n    display: inline-block;\n    margin: 4px;\n    vertical-align: top; }\n", ""]);
 	
 	// exports
 
@@ -34549,7 +34549,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.project__link {\n  border: 2px solid #000;\n  background-color: #C0C7C8; }\n  .project__link:hover, .project__link:focus, .project__link:active {\n    border: 2px solid #7A7A7A; }\n\n.project__link {\n  display: inline-block;\n  margin-top: 10px;\n  padding: 5px 5px; }\n  @media (min-width: 540px) {\n    .project__link {\n      margin-top: 35px; } }\n\n.project {\n  height: calc(100% - 30px); }\n  .project__inner-wrapper {\n    display: block;\n    margin: 12px;\n    font-family: arial, sans-serif; }\n  .project__image-wrapper {\n    display: block;\n    max-width: 300px;\n    margin: 0 auto 15px auto; }\n    @media (min-width: 540px) {\n      .project__image-wrapper {\n        display: inline-block;\n        width: 60%;\n        margin-bottom: 0;\n        max-width: none; } }\n  .project__image-inner-wrapper {\n    margin-bottom: 10px; }\n  .project__image {\n    display: block;\n    width: 100%;\n    height: auto;\n    border: 2px solid #000;\n    margin-bottom: 10px; }\n    .project__image:last-child {\n      margin-bottom: 0; }\n    .project__image--portrait {\n      display: inline-block;\n      width: calc(50% - 5px);\n      margin-bottom: 0; }\n      .project__image--portrait:first-child {\n        margin-right: 10px; }\n  .project__info-wrapper {\n    display: inline-block;\n    vertical-align: top; }\n    @media (min-width: 540px) {\n      .project__info-wrapper {\n        width: 35%;\n        margin-left: 20px; } }\n  .project__info {\n    margin: 10px 0; }\n    @media (min-width: 540px) {\n      .project__info:first-child {\n        margin-top: 0; } }\n  .project__info-title {\n    display: inline-block;\n    font-weight: bold; }\n    .project__info-title--has-margin {\n      margin-bottom: 3px; }\n  .project__info-item {\n    margin-bottom: 5px; }\n    .project__info-item:first-child {\n      margin-bottom: 0; }\n  .project__link {\n    font-size: 1.4rem; }\n", ""]);
+	exports.push([module.id, "/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n/* ===== Colours ===== */\n/* ===== Borders ===== */\n/* ===== Breakpoints ===== */\n.project__link {\n  border: 2px solid #000;\n  background-color: #C0C7C8; }\n  .project__link:hover, .project__link:focus, .project__link:active {\n    border: 2px solid #7A7A7A; }\n\n.project__link {\n  display: inline-block;\n  margin-top: 10px;\n  padding: 5px 5px; }\n  @media (min-width: 540px) {\n    .project__link {\n      margin-top: 35px; } }\n\n.project {\n  height: 100%;\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch;\n  padding-bottom: 20px; }\n  @media (min-width: 540px) {\n    .project {\n      height: calc(100% - 30px);\n      padding-bottom: 0; } }\n  .project__inner-wrapper {\n    display: block;\n    margin: 12px;\n    font-family: arial, sans-serif; }\n  .project__image-wrapper {\n    display: block;\n    max-width: 300px;\n    margin: 0 auto 15px auto; }\n    @media (min-width: 540px) {\n      .project__image-wrapper {\n        display: inline-block;\n        width: 60%;\n        margin-bottom: 0;\n        max-width: none; } }\n  .project__image-inner-wrapper {\n    margin-bottom: 10px; }\n  .project__image {\n    display: block;\n    width: 100%;\n    height: auto;\n    border: 2px solid #000;\n    margin-bottom: 10px; }\n    .project__image:last-child {\n      margin-bottom: 0; }\n    .project__image--portrait {\n      display: inline-block;\n      width: calc(50% - 5px);\n      margin-bottom: 0; }\n      .project__image--portrait:first-child {\n        margin-right: 10px; }\n  .project__info-wrapper {\n    display: inline-block;\n    vertical-align: top; }\n    @media (min-width: 540px) {\n      .project__info-wrapper {\n        width: 35%;\n        margin-left: 20px; } }\n  .project__info {\n    margin: 10px 0; }\n    @media (min-width: 540px) {\n      .project__info:first-child {\n        margin-top: 0; } }\n  .project__info-title {\n    display: inline-block;\n    font-weight: bold; }\n    .project__info-title--has-margin {\n      margin-bottom: 3px; }\n  .project__info-item {\n    margin-bottom: 5px; }\n    .project__info-item:first-child {\n      margin-bottom: 0; }\n  .project__link {\n    font-size: 1.4rem; }\n", ""]);
 	
 	// exports
 
@@ -34729,7 +34729,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".app {\n  height: 100%;\n  font-size: 1.4rem;\n  display: flex;\n  flex-direction: column;\n  text-align: left;\n  align-items: flex-start;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n.app__inner-wrapper {\n  width: 100%;\n  height: calc(100% - 30px); }\n", ""]);
+	exports.push([module.id, ".app {\n  height: 100%;\n  font-size: 1.4rem;\n  display: flex;\n  flex-direction: column;\n  text-align: left;\n  align-items: flex-start;\n  text-rendering: optimizeLegibility;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n.app__inner-wrapper {\n  width: 100%;\n  height: calc(100% - 30px);\n  overflow-x: scroll;\n  -webkit-overflow-scrolling: touch; }\n", ""]);
 	
 	// exports
 
