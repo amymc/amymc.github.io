@@ -15,7 +15,7 @@ class Clock extends React.Component {
 
     // correct for number over 24, and negatives
     if( hours >= 24 ){ hours -= 24; }
-    if( hours < 0   ){ hours += 12; }
+    if( hours < 0   ){ hours += 24; }
 
     // add leading zero, first convert hours to string
     hours = hours + "";
@@ -24,7 +24,7 @@ class Clock extends React.Component {
     // minutes are the same on every time zone
     let minutes = currentdate.getUTCMinutes();
 
-    // add leading zero, first convert hours to string
+    // add leading zero, first convert minutes to string
     minutes = minutes + "";
     if( minutes.length == 1 ){ minutes = "0" + minutes; }
 

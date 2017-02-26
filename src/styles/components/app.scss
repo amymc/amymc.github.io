@@ -13,4 +13,7 @@
 .app__inner-wrapper {
   width: 100%;
   height: calc(100% - 30px);
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+
 }

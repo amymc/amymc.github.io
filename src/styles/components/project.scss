@@ -2,7 +2,15 @@
 @import '../base/buttons';
 
 .project {
-  height: calc(100% - 30px);
+  height: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+
+  @media (min-width: $md) {
+    height: calc(100% - 30px);
+    padding-bottom: 0;
+  }
 
   &__inner-wrapper {
     display: block;
