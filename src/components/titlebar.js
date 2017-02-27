@@ -5,7 +5,7 @@ const TitleBar = (props) => {
   const isSelectedProject = props.project.title === props.selectedProject ? true : false;
 
   return (
-    <div className={'titlebar' + (isSelectedProject ? ' titlebar--selected' : '')}>
+    <div className='titlebar'>
       <img className='titlebar__icon' src={require('../assets/os-icons/openfolder-icon.png')} alt='open folder icon' />
       <span className='titlebar__text'>{props.project.title}</span>
     </div>

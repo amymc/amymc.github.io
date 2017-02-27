@@ -32,18 +32,9 @@ $leftOffset: 35px;
   }
 
   &--project {
-    display: none;
     top: 0;
     left: 0;
     height: calc(100% - 30px);
-
-    @media (min-width: $md) {
-      display: block;
-    }
-  }
-
-  &--selected {
-    display: block;
   }
 
   @media (min-width: $md) {

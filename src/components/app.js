@@ -18,6 +18,7 @@ class App extends React.Component {
       startButtonActive: false
     };
 
+    this.closeExtraProjects = this.closeExtraProjects.bind(this);
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleStartClick = this.handleStartClick.bind(this);
   }
@@ -43,6 +44,16 @@ class App extends React.Component {
 
     this.selectedPopup = selectedPopup;
     this.selectedProject = selectedProject;
+  }
+
+  // Close all projects except the selected one when reszing down to mobile
+  closeExtraProjects() {
+    const openProjects = this.props.projects.filter(project => project.isOpen === true);
+    openProjects.map((project) => {
+      if (project.title !== this.state.selectedProject) {
+        this.props.actions.closeProject(project.title);
+      }
+    });
   }
 
   handleMouseDown(windowTitle) {
@@ -74,12 +85,12 @@ class App extends React.Component {
             {openProjects.map((project, index) => {
               const zIndex = project.title === this.state.selectedWindow ?
                 10 : 1;
-              return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject} selectedProject={this.state.selectedProject}/>
+              return <Window key={index} item={project} zIndex={zIndex} isProject={true} onMouseDown={this.handleMouseDown} onCloseClick={actions.closeProject} closeExtraProjects={this.closeExtraProjects}/>
             })}
             {openPopups.map((popup, index) => {
                const zIndex = popup.title === this.state.selectedWindow ?
                 10 : 1;
-              return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup}/>
+              return <Window key={index} item={popup} zIndex={zIndex} isProject={false} onMouseDown={this.handleMouseDown} onCloseClick={actions.closePopup} closeExtraProjects={this.closeExtraProjects}/>
             })}
           </div>
         </div>
@@ -87,7 +98,7 @@ class App extends React.Component {
           <Menu onClick={actions.openPopup} items={menuItems} onPageClick={this.handleStartClick} /> :
           null
         }
-        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects} selectedProject={this.state.selectedProject}/>
+        <StartBar onClick={this.handleStartClick} active={this.state.startButtonActive} openProjects={openProjects} />
       </div>
     );
   }

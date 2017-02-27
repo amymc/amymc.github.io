@@ -1,6 +1,9 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import { Resizable } from 'react-resizable';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as ProjectActions from '../actions';
 import Popup from './popup';
 import Project from './project';
 import WindowTitle from './windowtitle';
@@ -25,24 +28,33 @@ class Window extends React.Component {
     this.renderFixedSize = this.renderFixedSize.bind(this);
     this.renderResizable = this.renderResizable.bind(this);
     this.setAvailableSpace = this.setAvailableSpace.bind(this);
-    this.updateWindowWidth = this.updateWindowWidth.bind(this);
+    this.checkWindowWidth = this.checkWindowWidth.bind(this);
   }
 
   componentDidMount() {
-    this.updateWindowWidth();
-    window.addEventListener('resize', this.updateWindowWidth);
+    this.checkWindowWidth();
+    window.addEventListener('resize', this.checkWindowWidth);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowWidth);
+    window.removeEventListener('resize', this.checkWindowWidth);
   }
 
-  updateWindowWidth() {
+  checkWindowWidth() {
+    let hasResizedToMobile;
     if (window.innerWidth > 540) {
       this.setState({ isDesktop: true });
     } else {
       this.setState({ isDesktop: false });
     }
+
+    hasResizedToMobile = this.previousDesktopState && (this.previousDesktopState !== this.state.isDesktop) && !this.state.isDesktop;
+
+    if (hasResizedToMobile && this.props.item.title !== this.props.selectedProject) {
+      this.props.closeExtraProjects();
+    }
+
+    this.previousDesktopState = this.state.isDesktop;
 
     if (this.openWindow) {
       this.setAvailableSpace('resize');
@@ -69,7 +81,7 @@ class Window extends React.Component {
   }
 
   onResize(event, {size}){
-    this.updateWindowWidth();
+    this.checkWindowWidth();
     this.setState({width: size.width, height: size.height});
   }
 
@@ -97,10 +109,9 @@ class Window extends React.Component {
 
   renderFixedSize() {
     const { item, zIndex } = this.props;
-    const isSelectedProject = item.title === this.props.selectedProject ? true : false;
 
     return (
-      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup') + (isSelectedProject ? ' window--selected' : '')} ref={(window) => { this.openWindow = window;}}>
+      <div style={{zIndex: zIndex}} className={'window' + (this.props.isProject ? ' window--project' : ' window--popup')} ref={(window) => { this.openWindow = window;}}>
         <WindowTitle {...item} onClick={() => this.props.onCloseClick(item.title)} />
         {this.props.isProject ?
             <Project {...item} /> :
@@ -112,6 +123,7 @@ class Window extends React.Component {
 
   renderResizable() {
     const { item, zIndex } = this.props;
+
     return (
       <Resizable height={this.state.height} width={this.state.width} lockAspectRatio={true} minConstraints={[500, 389]} maxConstraints={[this.state.availableWidth, this.state.availableHeight]} onResize={this.onResize}>
         <div style={{zIndex: zIndex, width: this.state.width + 'px', 'maxWidth': this.state.availableWidth + 'px', 'maxHeight': this.state.availableHeight + 'px'}} className='window window--project' ref={(window) => { this.openWindow = window;}}>
@@ -131,4 +143,14 @@ class Window extends React.Component {
   }
 }
 
-export default Window;
+// export default Window;
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ProjectActions, dispatch)
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Window);
+

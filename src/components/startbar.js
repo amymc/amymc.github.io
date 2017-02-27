@@ -13,7 +13,7 @@ class StartBar extends React.Component {
   renderTitleBar() {
     return (
       this.props.openProjects.map((project, index) => {
-        return <TitleBar key={index} project={project} selectedProject={this.props.selectedProject} />
+        return <TitleBar key={index} project={project} />
       })
     );
   }
