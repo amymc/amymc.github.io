@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CloseButton from './closebutton';
+import projectIcon from '../assets/os-icons/sideprojects-icon.png';
 import '../styles/components/popup.scss';
 
 class Popup extends React.Component {
@@ -15,7 +16,7 @@ class Popup extends React.Component {
   renderContact() {
     return (
       <div>
-        <img className='popup__icon popup__icon--contact' src={`assets/os-icons/${this.props.image_url}`} alt={this.props.title} />
+        <img className='popup__icon popup__icon--contact' src={require(`../assets/os-icons/${this.props.image_url}`)} alt={this.props.title} />
         <div className='popup__inner-wrapper popup__inner-wrapper--contact'>
           <div className='popup__text'>
             
@@ -40,7 +41,7 @@ class Popup extends React.Component {
             <li className='popup__project' key={index}>
               <a href={project.url} href={`http://www.amymccarthy.co/${project.url}/`} target='_blank'>
                 <figure className='popup__project-icon-wrapper'>
-                  <img className='popup__project-icon' src='assets/os-icons/sideprojects-icon.png' alt='' />
+                  <img className='popup__project-icon' src={projectIcon} alt='project icon' />
                 </figure>
                 <h1 className='popup__project-title'>{project.title}</h1>
               </a>
@@ -54,7 +55,7 @@ class Popup extends React.Component {
   renderStandardPopup() {
     return (
       <div>
-        <img className={'popup__icon' + (this.props.isContact ? ' popup__icon--contact' : '')} src={`assets/os-icons/${this.props.image_url}`} alt={this.props.title} />
+        <img className={'popup__icon' + (this.props.isContact ? ' popup__icon--contact' : '')} src={require(`../assets/os-icons/${this.props.image_url}`)} alt={this.props.title} />
         <div className='popup__inner-wrapper'>
           <div className='popup__text'>
             <p>{this.props.message[0]}</p>

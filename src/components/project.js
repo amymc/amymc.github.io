@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import * as ProjectActions from '../actions';
 import CloseButton from './closebutton';
 import '../styles/components/project.scss';
@@ -17,7 +16,7 @@ class Project extends React.Component {
   renderLandscapeLayout() {
     return (
       this.props.image_urls.map((url, index) => {
-        return <img key={index} className='project__image' alt={this.props.title} src={`assets/${url}`} />
+        return <img key={index} className='project__image' alt={this.props.title} src={require(`../assets/${url}`)} />
       })
     );
   }
@@ -26,10 +25,10 @@ class Project extends React.Component {
     return (
       <div>
         <div className="project__image-inner-wrapper">
-          <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[0]}`} />
-          <img className='project__image project__image--portrait' alt={this.props.title} src={`assets/${this.props.image_urls[1]}`} />
+          <img className='project__image project__image--portrait' alt={this.props.title} src={require(`../assets/${this.props.image_urls[0]}`)} />
+          <img className='project__image project__image--portrait' alt={this.props.title} src={require(`../assets/${this.props.image_urls[1]}`)} />
         </div>
-        <img className='project__image' alt={this.props.title} src={`assets/${this.props.image_urls[2]}`} />
+        <img className='project__image' alt={this.props.title} src={require(`../assets/${this.props.image_urls[2]}`)} />
       </div>
     );
   }
@@ -83,6 +82,3 @@ export default connect(
   null,
   mapDispatchToProps
 )(Project);
-
-
-//export default Project;

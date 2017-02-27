@@ -5,9 +5,7 @@
   "homepage": "https://amymccarthy.co/two_point_oh",
   "scripts": {
     "build": "babel src -d build",
-    "start": "webpack -d --watch & live-server --entry-file=index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "webpack -d --watch & live-server --entry-file=index.html"
   },
   "dependencies": {
     "core-js": "^2.4.1",
@@ -36,6 +34,7 @@
     "eslint-plugin-react": "^6.0.0",
     "file-loader": "^0.9.0",
     "gh-pages": "^0.12.0",
+    "image-webpack-loader": "^3.2.0",
     "live-server": "^1.0.0",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.1.1",

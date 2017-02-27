@@ -20,7 +20,7 @@ const projects = [
       'dots/twodots_screenshot1.png',
       'dots/twodots_screenshot2.png',
       'dots/dots_screenshot1.png'
-      ],
+    ],
     hasPortraitImages: true,
     type: 'Games studio',
     description: [
@@ -36,7 +36,7 @@ const projects = [
     title: 'Edenspiekermann',
     image_urls: [
       'espi/mywings.png'
-      ],
+    ],
     type: 'Design agency',
     description: [
       'Worked on a React/Redux app for Redbull that consisted of micro campaigns for different regions'
@@ -49,9 +49,9 @@ const projects = [
   {
     title: 'Bragbet',
     image_urls: [
-      'bragbet/bragbet_screenshot1.jpg',
-      'bragbet/bragbet_screenshot2.jpg'
-      ],
+      'bragbet/bragbet_screenshot1.png',
+      'bragbet/bragbet_screenshot2.png'
+    ],
     type: 'Social betting startup',
     description: [
       'Turned Photoshop mockups into responsive pages'
@@ -67,9 +67,9 @@ const projects = [
   {
     title: 'GetBulb',
     image_urls: [
-      'getbulb/getbulb_screenshot1.jpg',
-      'getbulb/getbulb_screenshot2.jpg'
-      ],
+      'getbulb/getbulb_screenshot1.png',
+      'getbulb/getbulb_screenshot2.png'
+    ],
     type: 'Data visualisation startup',
     description: [
       'Created charts, graphs and maps using D3.js.',
