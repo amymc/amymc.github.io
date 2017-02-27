@@ -1,9 +1,6 @@
 # Dependency directory
 node_modules
 
-# Build directory
-build
-
 # misc
 .DS_Store
 .env
