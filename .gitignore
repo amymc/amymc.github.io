@@ -1,8 +1,8 @@
 # Dependency directory
 node_modules
 
-# Bundle map
-build/bundle.js.map
+# build directory
+build
 
 # misc
 .DS_Store
