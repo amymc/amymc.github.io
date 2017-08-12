@@ -1,3 +1,5 @@
+@import '../base/desktop_icon';
+
 .app {
   height: 100%;
   font-size: 1.4rem;
@@ -8,12 +10,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-.app__inner-wrapper {
-  width: 100%;
-  height: calc(100% - 30px);
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
+  &__inner-wrapper {
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 
+  &__desktop-icon {
+    @extend %desktop-icon;
+  }
 }

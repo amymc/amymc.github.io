@@ -29,7 +29,7 @@ module.exports = {
         exclude:  [/os-icons/],
         loaders: [
           'file?hash=sha512&digest=hex&name=/assets/[hash].[ext]',
-          'image-webpack?optimizationLevel=7&interlaced=false'
+          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
         ]
       }
     ],

@@ -1,11 +1,8 @@
 @import '../base/variables';
+@import '../base/desktop_icon';
 
 .folder {
-  text-align: center;
-  width: 86px;
-  margin: 10px;
-  padding-top: 10px;
-  cursor: pointer;
+  @extend %desktop-icon;
 
   &__icon {
     position: relative;
@@ -42,13 +39,7 @@
     }
   }
 
-  &__title {
-    display: inline-block;
-    margin: 5px 0;
-    color: $white;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    word-break: break-all;
-  }
+  // &__title {
+  //   @extend %desktop-icon-title;
+  // }
 }

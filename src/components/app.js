@@ -81,7 +81,10 @@ class App extends React.Component {
           {projects.map((project, index) => {
             return <Folder key={index} project={project} onClick={actions.openProject}/>
           })}
-          <img src={require(`../assets/os-icons/inbox.png`)} alt='inbox' />
+          <div className='app_desktop-icon'>
+            <img className='' src={require(`../assets/os-icons/inbox-icon.png`)} alt='inbox' />
+            <p className='desktop-icon__title'>Inbox</p>
+          </div>
           <div>
             {openProjects.map((project, index) => {
               const zIndex = project.title === this.state.selectedWindow ?
