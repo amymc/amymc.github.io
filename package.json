@@ -5,7 +5,8 @@
   "homepage": "https://amymccarthy.co/two_point_oh",
   "scripts": {
     "build": "babel src -d build",
-    "start": "webpack -d --watch & live-server --entry-file=index.html"
+    "start": "webpack -d --watch & live-server --entry-file=index.html",
+    "test": "mocha test/.setup.js test/**/*.test.js"
   },
   "dependencies": {
     "core-js": "^2.4.1",
@@ -27,6 +28,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "css-loader": "^0.26.1",
+    "enzyme": "^2.9.1",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^10.0.0",
     "eslint-plugin-import": "^1.12.0",
@@ -35,8 +37,12 @@
     "file-loader": "^0.9.0",
     "gh-pages": "^0.12.0",
     "image-webpack-loader": "^3.2.0",
+    "jsdom": "^11.1.0",
     "live-server": "^1.0.0",
+    "mocha": "^3.5.0",
     "node-sass": "^3.13.0",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^15.6.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
