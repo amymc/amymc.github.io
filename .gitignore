@@ -9,3 +9,4 @@ build/bundle.js.map
 .env
 npm-debug.log
 .jshintrc
+.npmrc
