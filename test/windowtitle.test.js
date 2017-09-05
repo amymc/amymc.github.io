@@ -5,31 +5,20 @@ import WindowTitle from '../src/components/windowtitle';
 import CloseButton from '../src/components/closebutton';
 
 describe("Windowtitle", function() {
-  // beforeEach(() => {
-  //   props.title = "Fake title";
-  // });
+  beforeEach(() => {
+    this.wrapper = shallow(<WindowTitle title={'Fake title'}/>);
+  });
 
-  //console.log('test', WindowTitle);
+  it("renders a div", () => {
+    expect(this.wrapper.find('div').length).to.equal(1);
+  });
+
+
+  it("displays the title", () => {
+    expect(this.wrapper.find('.window-title__heading').text()).to.equal('Fake title');
+  });
 
   it("contains a close button", () => {
-    const wrapper = shallow(<WindowTitle />);
-    expect(wrapper.find(CloseButton).length).to.equal(1);
-    //expect(divs.length).toBeGreaterThan(0);
-  });
-
-  it("displays the title", function() {
-    
-  });
-
-  it("closes the window on clicking the close button", function() {
-    
+    expect(this.wrapper.find(CloseButton).length).to.equal(1);
   });
 });
-
-
-// describe('<MyInputComponent/>', () => {
-//     it('renders without exploding', () => {
-//         const wrapper = shallow(<MyInputComponent />);
-//         expect(wrapper.find(MyInputComponent).length).to.equal(1);
-//     });
-// });
