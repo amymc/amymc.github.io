@@ -8,7 +8,7 @@ describe("Clock", function() {
   beforeEach(() => {
     this.now = new Date();
     this.wrapper = shallow(<Clock/>);
-    this.wrapper.instance().setTime(this.now);
+    this.wrapper.instance().setTime(new Date(this.now));
   });
 
   it("renders a div", () => {
@@ -20,17 +20,17 @@ describe("Clock", function() {
     expect(this.wrapper.state().minutes).to.equal(this.now.getMinutes());
   });
 
-  it("updates the time automatically", () => {
+  it("updates the time automatically", (done) => {
     const timer = sinon.useFakeTimers();
     const firstTime = this.wrapper.state().minutes;
+    
+    setTimeout(done, 60000);
+    timer.tick(61000);
 
-    // TODO: test that setTimeout works 😬
-    timer.tick(60000);
-    // this.wrapper.update();
-    console.log('this.wrapper.state()', this.wrapper.state(), 'timer', timer);
     const currentTime = this.wrapper.state().minutes;
-    console.log('currentTime', parseInt(currentTime),'firstTime', parseInt(firstTime) + 1);
     expect(currentTime).to.equal(parseInt(firstTime) + 1);
+    
+    done();
     timer.restore();
   });
 });
