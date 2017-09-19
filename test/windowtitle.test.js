@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow, mount, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import WindowTitle from '../src/components/windowtitle';
 import CloseButton from '../src/components/closebutton';
 
