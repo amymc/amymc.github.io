@@ -5,6 +5,7 @@ const projects = [
       'ostmodern/bfi_screenshot1.png',
       'ostmodern/bfi_screenshot2.png'
     ],
+    hasPortraitImages: false,
     type: 'Digital agency specialising in streaming video platforms',
     description: [
       'Worked on responsive video platforms for BFI, BBC and UTV'
@@ -37,6 +38,7 @@ const projects = [
     image_urls: [
       'espi/mywings.png'
     ],
+    hasPortraitImages: false,
     type: 'Design agency',
     description: [
       'Worked on a React/Redux app for Redbull that consisted of micro campaigns for different regions'
@@ -52,6 +54,7 @@ const projects = [
       'bragbet/bragbet_screenshot1.png',
       'bragbet/bragbet_screenshot2.png'
     ],
+    hasPortraitImages: false,
     type: 'Social betting startup',
     description: [
       'Turned Photoshop mockups into responsive pages'
@@ -70,6 +73,7 @@ const projects = [
       'getbulb/getbulb_screenshot1.png',
       'getbulb/getbulb_screenshot2.png'
     ],
+    hasPortraitImages: false,
     type: 'Data visualisation startup',
     description: [
       'Created charts, graphs and maps using D3.js.',

@@ -5,7 +5,7 @@ import * as ProjectActions from '../actions';
 import CloseButton from './closebutton';
 import '../styles/components/project.scss';
 
-class Project extends React.Component {
+export class Project extends React.Component {
   constructor(props) {
     super(props);
 
