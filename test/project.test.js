@@ -1,10 +1,12 @@
 import React from 'react';
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
+import sinon from 'sinon';
 import { mount, shallow } from 'enzyme';
 import { Project } from '../src/components/project';
 
 describe("Project", function() {
   beforeEach(() => {
+    this.callback = sinon.spy();
     this.item = {
       title: 'Twin peaks',
       type: 'lynchian',
@@ -37,7 +39,13 @@ describe("Project", function() {
       image_urls: [
         'ostmodern/bfi_screenshot1.png',
         'ostmodern/bfi_screenshot2.png'
-      ]
+      ],
+      popup: {
+        title: "false alarm"
+      },
+      actions: {
+        openPopup: this.callback
+      }
     };
 
     this.defaultWrapper = shallow(<Project {...defaultItem} />);
@@ -63,6 +71,7 @@ describe("Project", function() {
   });
 
   it("calls the onClick prop when the button is clicked", () => {
-
+    this.noUrlWrapper.find('button').simulate('click');
+    assert(this.callback.calledOnce);
   });
 });
