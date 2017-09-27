@@ -4,7 +4,7 @@ import CloseButton from './closebutton';
 import projectIcon from '../assets/os-icons/sideprojects-icon.png';
 import '../styles/components/popup.scss';
 
-class Popup extends React.Component {
+export class Popup extends React.Component {
   constructor(props) {
     super(props);
 

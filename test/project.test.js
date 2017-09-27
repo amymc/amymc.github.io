@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect, assert } from 'chai';
 import sinon from 'sinon';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Project } from '../src/components/project';
 
 describe("Project", function() {
