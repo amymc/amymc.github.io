@@ -19,7 +19,7 @@ describe("Popup", function() {
       isOpen: false,
       isSelected: false,
     };
-    const contactItem = { 
+    this.contactItem = { 
       title: "Contact",
       image_url: "profile-pic.png",
       message: 'test',
@@ -70,7 +70,7 @@ describe("Popup", function() {
       }
     ];
     this.wrapper = shallow(<Popup {...this.item} onClick={this.callback} />);
-    this.contactWrapper = shallow(<Popup {...contactItem} onClick={this.callback} />);
+    this.contactWrapper = shallow(<Popup {...this.contactItem} onClick={this.callback} />);
     this.projectsWrapper = shallow(<Popup {...projectsItem} onClick={this.callback} sideProjects={sideProjects}/>);
   });
 
@@ -80,6 +80,7 @@ describe("Popup", function() {
 
   it("renders contact", () => {
     expect(this.contactWrapper.find('.popup__inner-wrapper--contact').length).to.equal(1);
+    expect(this.contactWrapper.find('.popup__link').length).to.equal(this.contactItem.links.length);
   });
 
   it("renders side projects", () => {
