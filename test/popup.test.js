@@ -41,8 +41,37 @@ describe("Popup", function() {
       isSelected: false,
       isContact: true
     };
+    const projectsItem = {
+      title: "Random shit",
+      image_url: null,
+      message: null,
+      links: null,
+      button_text: null,
+      isOpen: false,
+      isSelected: false,
+      isSideProjects: true
+    };
+    const sideProjects = [
+      {
+        title: 'cyoa',
+        url: 'cyoa'
+      },
+      {
+        title: 'd3 snl',
+        url: 'd3-snl'
+      },
+      {
+        title: 'old portfolio',
+        url: 'old_portfolio'
+      },
+      {
+        title: 'domo domination',
+        url: 'domo-domination'
+      }
+    ];
     this.wrapper = shallow(<Popup {...this.item} onClick={this.callback} />);
     this.contactWrapper = shallow(<Popup {...contactItem} onClick={this.callback} />);
+    this.projectsWrapper = shallow(<Popup {...projectsItem} onClick={this.callback} sideProjects={sideProjects}/>);
   });
 
   it("renders self", () => {
@@ -51,5 +80,9 @@ describe("Popup", function() {
 
   it("renders contact", () => {
     expect(this.contactWrapper.find('.popup__inner-wrapper--contact').length).to.equal(1);
+  });
+
+  it("renders side projects", () => {
+    expect(this.projectsWrapper.find('.popup__projects-wrapper').length).to.equal(1);
   });
 });
