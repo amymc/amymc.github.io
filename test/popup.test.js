@@ -24,5 +24,11 @@ describe("Popup", function() {
 
   it("renders side projects", () => {
     expect(this.projectsWrapper.find('.popup__projects-wrapper').length).to.equal(1);
+    expect(this.projectsWrapper.find('.popup__project').length).to.equal(data.sideProjects.length);
+  });
+
+  it("calls the onClick prop when the button is clicked", () => {
+    this.wrapper.find('button').simulate('click');
+    assert(this.callback.calledOnce);
   });
 });
