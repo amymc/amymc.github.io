@@ -1,8 +1,10 @@
 import React from 'react';
+import TestUtils from 'react-dom/test-utils';
 import { expect, assert } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import MenuItem from '../src/components/menuitem';
+import Menu from '../src/components/menu';
 import * as data from './test-data/menuitem.data.js';
 
 describe("MenuItem", function() {
@@ -16,8 +18,8 @@ describe("MenuItem", function() {
   });
 
   it("renders submenu on hover if available", () => {
-    this.wrapper.find('button').simulate('onmouseover');
-
+    this.wrapper.simulate('mouseOver');
+    expect(this.wrapper.find('.menu-item').children('Menu').length).to.equal(1);
   });
 
   // it("renders side projects", () => {
