@@ -143,8 +143,6 @@ class Window extends React.Component {
   }
 }
 
-// export default Window;
-
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(ProjectActions, dispatch)
 });
