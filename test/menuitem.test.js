@@ -13,9 +13,9 @@ describe("MenuItem", function() {
     // this.projectsWrapper = shallow(<Popup {...data.projectsItem} onClick={this.callback} sideProjects={data.sideProjects}/>);
   });
 
-  // it("renders self", () => {
-  //   expect(this.wrapper.find('.menu-item').length).to.equal(1);
-  // });
+  it("renders self", () => {
+    expect(this.wrapper.find('.menu-item').length).to.equal(1);
+  });
 
   // it("renders contact", () => {
   //   expect(this.contactWrapper.find('.popup__inner-wrapper--contact').length).to.equal(1);
