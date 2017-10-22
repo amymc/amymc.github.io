@@ -1,6 +1,5 @@
 import React from 'react';
-import TestUtils from 'react-dom/test-utils';
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import MenuItem from '../src/components/menuitem';
@@ -17,9 +16,20 @@ describe("MenuItem", function() {
     expect(this.wrapper.find('.menu-item').length).to.equal(1);
   });
 
-  it("renders submenu on hover if available", () => {
+  it("renders submenu on hover if available", (done) => {
     this.wrapper.simulate('mouseOver');
     expect(this.wrapper.find('.menu-item').children('Menu').length).to.equal(1);
+
+    this.wrapper.simulate('mouseOut');
+
+    const timer = sinon.useFakeTimers();
+    setTimeout(done, 50);
+    timer.tick(51);
+
+    expect(this.wrapper.find('.menu-item').children('Menu').length).to.equal(0);
+
+    done();
+    timer.restore();
   });
 
   // it("renders side projects", () => {
