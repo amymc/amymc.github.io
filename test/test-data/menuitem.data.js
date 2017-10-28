@@ -1,11 +1,13 @@
 export const item = {
   title: "Documents",
   image_url: "documents-icon.png",
-  onClick: false,
+  onClick: true,
   onMouseOut: true,
   onMouseOver: true,
   isSubmenu: false,
-  popup: null,
+  popup: {
+    title: "Contact"
+  },
   items: [
     {
       title: "Random shit",

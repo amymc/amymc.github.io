@@ -1,5 +1,5 @@
 import React from 'react';
-import { expect } from 'chai';
+import { assert, expect } from 'chai';
 import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import MenuItem from '../src/components/menuitem';
@@ -14,6 +14,9 @@ describe("MenuItem", function() {
 
   it("renders self", () => {
     expect(this.wrapper.find('.menu-item').length).to.equal(1);
+    expect(this.wrapper.find('.menu-item__title').text()).to.equal(data.item.title);
+
+    
   });
 
   it("renders submenu on hover if available", (done) => {
@@ -37,8 +40,8 @@ describe("MenuItem", function() {
   //   expect(this.projectsWrapper.find('.popup__project').length).to.equal(data.sideProjects.length);
   // });
 
-  // it("calls the onClick prop when the button is clicked", () => {
-  //   this.wrapper.find('button').simulate('click');
-  //   assert(this.callback.calledOnce);
-  // });
+  it("calls the onClick prop when clicked", () => {
+    this.wrapper.find('li').simulate('click');
+    assert(this.callback.calledOnce);
+  });
 });
