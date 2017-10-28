@@ -9,7 +9,7 @@ import Project from './project';
 import WindowTitle from './windowtitle';
 import '../styles/components/window.scss';
 
-class Window extends React.Component {
+export class Window extends React.Component {
   constructor(props) {
     super(props);
 
