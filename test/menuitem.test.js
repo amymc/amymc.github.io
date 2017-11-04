@@ -15,8 +15,6 @@ describe("MenuItem", function() {
   it("renders self", () => {
     expect(this.wrapper.find('.menu-item').length).to.equal(1);
     expect(this.wrapper.find('.menu-item__title').text()).to.equal(data.item.title);
-
-    
   });
 
   it("renders submenu on hover if available", (done) => {
