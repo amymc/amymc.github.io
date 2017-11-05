@@ -1,6 +1,6 @@
 import React from 'react';
 import { assert, expect } from 'chai';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Draggable from 'react-draggable';
 import { Resizable } from 'react-resizable';
@@ -34,8 +34,8 @@ describe("Window", function() {
   });
 
   it("displays correct layout", () => {
-    assert(expect(this.projectWrapper.find('.window--project').length).to.equal(1));
-    assert(expect(this.popupWrapper.find('.window--popup').length).to.equal(1));
+    expect(this.projectWrapper.find('.window--project').length).to.equal(1);
+    expect(this.popupWrapper.find('.window--popup').length).to.equal(1);
   });
 
   it("checks width on resize", () => {

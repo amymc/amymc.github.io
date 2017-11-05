@@ -1,13 +1,11 @@
 import React from 'react';
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import TitleBar from '../src/components/titlebar';
 import * as projectData from './test-data/project.data.js';
 
 describe("TitleBar", function() {
   beforeEach(() => {
-    this.callback = sinon.spy();
     this.wrapper = shallow(<TitleBar project={projectData.defaultItem} />);
   });
 
