@@ -1,14 +1,16 @@
 import React from 'react';
-import { expect } from 'chai';
+import { assert, expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Draggable from 'react-draggable';
 import { Resizable } from 'react-resizable';
 import { Window } from '../src/components/window';
+import * as projectData from './test-data/project.data.js';
 
 describe("Window", function() {
   beforeEach(() => {
-    this.wrapper = shallow(<Window/>);
+    this.callback = sinon.spy();
+    this.wrapper = shallow(<Window item={projectData.item} onMouseDown={this.callback(projectData.item.title)} />);
   });
 
   it("renders a div", () => {
@@ -22,5 +24,10 @@ describe("Window", function() {
     } else {
       expect(this.wrapper.find('Draggable').length).to.equal(0);
     }
+  });
+
+  it("calls the onMouseDown prop on mouse down", () => {
+    this.wrapper.simulate('mouseDown');
+    assert(this.callback.calledOnce);
   });
 });
