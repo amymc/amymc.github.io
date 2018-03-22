@@ -3,7 +3,7 @@
 
 .project {
   height: 100%;
-  overflow-x: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 20px;
 
@@ -60,7 +60,7 @@
   &__info-wrapper {
     display: inline-block;
     vertical-align: top;
-    
+
     @media (min-width: $md) {
       width: 35%;
       margin-left: 20px;
